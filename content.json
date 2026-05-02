@@ -1,0 +1,579 @@
+{
+  "meta": {
+    "siteTitle": "Yueteng (Laurence) Yu | Advanced Automotive HMI Research",
+    "lastUpdated": "2026-05-02",
+    "language": "en-AU",
+    "cvPdf": "cv/Yueteng-Yu-CV.pdf",
+    "cvPrintPage": "cv.html"
+  },
+  "profile": {
+    "name": "Yueteng (Laurence) Yu",
+    "shortName": "Yueteng Yu",
+    "title": "PhD Candidate at QUT | Advanced HMI Researcher for Automated Vehicles",
+    "location": "Brisbane, Queensland, Australia | Shanghai, China",
+    "email": "laurence.yu@foxmail.com",
+    "portrait": "images/Yueteng Yu-lowPixel.jpg",
+    "heroImage": "images/myLoveCars_sign.jpg",
+    "statement": "I am motivated by a simple question: How can we design safer and user-centred automated driving interactions that benefit a broader population?",
+    "summary": [
+      "I am a PhD candidate at <a href='https://avr3.org.au/' target='_blank'>Future Mobility Centre, Queensland University of Technology (QUT)</a>, researching advanced human-machine interfaces (HMIs) for automated vehicles.",
+      "My work focuses on multimodal HMI, bringing safety and better user experience in high levels of automated driving.",
+      "I have designed and organised studies across driving simulators, test tracks, open-road urban experiments and autonomous-vehicle data collection, with practical experience in multimodal sensing including DMS, IMU, ECG/EDA, EEG, eye tracking, physiological data, video and subjective measures.",
+      "Before QUT, I worked across <a href='https://air.tsinghua.edu.cn/en/' target='_blank'>Tsinghua University</a>'s HCI and intelligent transportation research environment, automotive HMI UX projects, and software engineering roles at <a href='https://www.pwc.com/gx/en.html' target='_blank'>PwC</a>."
+    ],
+    "currentRoles": [
+      {
+        "role": "PhD Candidate",
+        "organisation": "CARRS-Q / AVR3, Queensland University of Technology",
+        "period": "Feb 2024 - Present"
+      },
+      {
+        "role": "Research Associate (PhD)",
+        "organisation": "BMW Group + QUT Design Academy",
+        "period": "Mar 2024 - Present"
+      }
+    ],
+    "links": [
+      {
+        "label": "Email",
+        "url": "mailto:laurence.yu@foxmail.com",
+        "icon": "mail"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=lPzPwh0AAAAJ&hl=en",
+        "icon": "scholar"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/laurence-yu/",
+        "icon": "linkedin"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/yyt1208732230",
+        "icon": "github"
+      },
+      {
+        "label": "QUT Profile",
+        "url": "https://research.qut.edu.au/carrsq/staff/yueteng-yu/",
+        "icon": "profile"
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "value": "Academia + Industry",
+      "label": "Career experience"
+    },
+    {
+      "value": "SAE L0 / L3 / L4",
+      "label": "Automated driving research contexts"
+    },
+    {
+      "value": "Simulator + test track + real road",
+      "label": "Study environments"
+    },
+    {
+      "value": "HCI + software + UR",
+      "label": "Cross-field foundation"
+    }
+  ],
+  "researchFocus": [
+    "Dynamic Human-machine interface (dHMI)",
+    "Driver attention management",
+    "Multimodal interaction design",
+    "Driving behaviour and driving safety"
+  ],
+  "publications": [
+    {
+      "title": "🏆 Small Talk, Big Impact? LLM-based Conversational Agents to Mitigate Passive Fatigue in Conditional Automated Driving",
+      "authors": "Lewis Cockram*, Yueteng Yu*, Jorge Pardo, Xiaomeng Li, Andry Rakotonirainy, Jonny Kuo, Sebastien Demmel, Mike Lenne and Ronald Schroeter",
+      "teaser": "images/research/chi26-CA.png",
+      "venue": "ACM CHI Conference on Human Factors in Computing Systems",
+      "year": "2026",
+      "type": "Conference paper / Co-first author / Best paper",
+      "summary": "A test-track study exploring how an LLM-based conversational agent can support under-loaded scenario in conditional automated driving.",
+      "tags": ["Conversational AI", "Passive fatigue", "Test-track study", "Automated driving"],
+      "url": "https://dl.acm.org/doi/full/10.1145/3772318.3790972",
+      "sourceLabel": "CHI"
+    },
+    {
+      "title": "An EEG Dataset for Understanding Driving Expertise from Naturalistic Urban Road Experiments",
+      "authors": "Jiangtao Gong, Yueteng Yu, Yancheng Cao, Ruoxuan Yang, Xiang Chang, Haoming Tang, Xiaoji Zheng, Yiyao Liu, Shanhe You, Chen Zheng and Guyue Zhou",
+      "teaser": "images/research/scidata26.png",
+      "venue": "Scientific Data",
+      "year": "2026",
+      "type": "Journal paper",
+      "summary": "A naturalistic urban road dataset for understanding driving expertise, connected with multimodal real-road driving behaviour research.",
+      "tags": ["EEG", "Driving expertise", "Naturalistic driving", "Dataset"],
+      "url": "https://www.nature.com/articles/s41597-026-07223-1",
+      "sourceLabel": "Nature"
+    },
+    {
+      "title": "Designing With Motion: Exploring Vestibular Cues as a Subtle Awareness Nudge Modality in Automated Vehicles",
+      "authors": "Yueteng Yu, Xiaomeng Li, Sebastien Demmel, Sebastien Glaser, Jonny Kuo, Mike Lenne and Ronald Schroeter",
+      "teaser": "images/research/aui25-vc.png",
+      "venue": "AutomotiveUI 2025 Main Proceedings",
+      "year": "2025",
+      "type": "Conference paper / First Author",
+      "summary": "A qualitative test-track study of vestibular cues, implemented through subtle deceleration events, as a dynamic HMI for nudging attention during SAE L3 automated driving.",
+      "tags": ["Vestibular cues", "Dynamic HMI", "Level 3 automation", "Driver attention"],
+      "url": "https://dl.acm.org/doi/full/10.1145/3744333.3747824",
+      "sourceLabel": "AutomotiveUI"
+    },
+    {
+      "title": "Designing for Dignity while Driving: Interaction Needs of Blind and Low-Vision Passengers in Fully Automated Vehicles",
+      "authors": "Zhengtao Ma, Rafael Gomez, Togtokhtur Batbold, Zishuo Zhu, Yueteng Yu and Ronald Schroeter",
+      "venue": "ArXiv",
+      "year": "2025",
+      "type": "Preprint",
+      "summary": "An empirical accessibility-focused study on interaction needs of blind and low-vision passengers in fully automated vehicles.",
+      "tags": ["Accessibility", "Fully automated vehicles", "Passenger experience", "Inclusive design"],
+      "url": "https://arxiv.org/abs/2510.26015",
+      "sourceLabel": "ArXiv"
+    },
+    {
+      "title": "Measuring Passengers' Comfort and Perceived Safety in Automated Driving: Good Practices, Challenges, and Opportunities",
+      "authors": "Chen Peng, Pavlo Bazilinskyy, Yueteng Yu and Natasha Merat",
+      "venue": "AutomotiveUI 2025 Adjunct Proceedings",
+      "year": "2025",
+      "type": "Workshop",
+      "summary": "A workshop contribution on methodological practices and challenges in measuring passenger comfort and perceived safety in automated driving.",
+      "tags": ["Comfort", "Perceived safety", "Measurement", "Automated vehicles"],
+      "url": "https://doi.org/10.1145/3744335.3749142",
+      "sourceLabel": "AutomotiveUI"
+    },
+    {
+      "title": "Leveraging LLM-based Conversational Agents to Combat Passive Fatigue in Conditional Automated Driving Contexts",
+      "authors": "Yueteng Yu, Lewis Cockram, Jorge Pardo, Xiaomeng Li, Andry Rakotonirainy, Jonny Kuo, Sebastien Demmel, Mike Lenne and Ronald Schroeter",
+      "venue": "AutomotiveUI 2025 Adjunct Proceedings",
+      "year": "2025",
+      "type": "Work in progress / Poster / First author",
+      "summary": "Preliminary findings from a field study exploring a context-aware conversational agent for supporting alertness and readiness during Level 3 automated driving.",
+      "tags": ["LLM", "Conversational agent", "Passive fatigue", "Field study"],
+      "url": "https://dl.acm.org/doi/full/10.1145/3744335.3758493",
+      "sourceLabel": "AutomotiveUI"
+    },
+    {
+      "title": "🏆 Self-supervised Learning for Detecting Local Contextual Anomalous Gaze Patterns of Individual Drivers in Level 3 Automated Driving",
+      "authors": "HT Phan, Yueteng Yu, Rafael Cirino Gonçalves, Jonny Kuo, Sebastien Glaser, Mohammed Mamdouh Zakaria Elhenawy, Ronald Schroeter and Ashish Bhaskar",
+      "venue": "AutomotiveUI 2025 Adjunct Proceedings",
+      "year": "2025",
+      "type": "Work in progress / Best Poster",
+      "summary": "A machine-learning contribution connected with gaze-pattern detection in Level 3 automated driving.",
+      "tags": ["Self-supervised learning", "Gaze Anomaly", "Level 3 automation", "Driver monitoring"],
+      "url": "https://www.auto-ui.org/25/proceedings/adjunct-proceedings/",
+      "sourceLabel": "AutomotiveUI"
+    },
+    {
+      "title": "Exploring Deictic Interface Referencing Outside-vehicle Landmarks: Study of In-cabin Multimodal Interaction",
+      "authors": "Yueteng Yu, Yan Zhang, Wafa Johal and Gary Burnett",
+      "venue": "AutomotiveUI 2025 Adjunct Proceedings",
+      "year": "2025",
+      "type": "Work in progress / Poster",
+      "summary": "A multimodal in-cabin interaction study exploring deictic references to outside-vehicle landmarks.",
+      "tags": ["Deictic interface", "Multimodal interaction", "In-cabin HMI"],
+      "url": "https://dl.acm.org/doi/full/10.1145/3744335.3758475",
+      "sourceLabel": "AutomotiveUI"
+    },
+    {
+      "title": "Designing Dynamic HMI for Driver Attention Management in Highly Automated Vehicles",
+      "authors": "Yueteng Yu",
+      "venue": "Doctoral Colloquium, AutomotiveUI 2025",
+      "year": "2025",
+      "type": "Doctoral colloquium",
+      "summary": "Doctoral research framing dynamic HMI design for attention management in highly automated vehicles.",
+      "tags": ["Doctoral research", "Dynamic HMI", "Attention management", "Highly automated vehicles"],
+      "url": "https://www.auto-ui.org/25/",
+      "sourceLabel": "AutomotiveUI"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Human-machine interface design to manage driver engagement in automated vehicles",
+      "category": "Doctoral research",
+      "period": "2024 - Present",
+      "description": "Doctoral research at QUT focused on HMI design for managing driver engagement in automated vehicles.",
+      "outcomes": ["Dynamic HMI", "Driver engagement", "Level 3+ automated driving"],
+      "source": "QUT CARRS-Q profile and LinkedIn profile PDF"
+    },
+    {
+      "name": "Vestibular cues for autonomous vehicle HMIs",
+      "category": "BMW Group + QUT Design Academy",
+      "period": "2024 - Present",
+      "description": "Research on managing driver attention by using human-like subtle motion control of an automated vehicle to engage the human vestibular system.",
+      "outcomes": ["Automated vehicle HMI", "Test-track research", "Subtle motion cues"],
+      "source": "BMW Group + QUT Design Academy"
+    },
+    {
+      "name": "Test-track safety cue evaluation with a real autonomous vehicle",
+      "category": "AVR3 / QUT",
+      "period": "2024 - Present",
+      "description": "Organised and designed test-track research with a real autonomous vehicle, integrating DMS, IMU and ECG/EDA systems for safety cue evaluation.",
+      "outcomes": ["DMS", "IMU", "ECG/EDA", "Safety cue evaluation"],
+      "source": "LinkedIn profile screenshots PDF"
+    },
+    {
+      "name": "Multi-modal open-road driving behaviour in urban contexts",
+      "category": "Tsinghua University / Baidu collaboration",
+      "period": "2022 - 2023",
+      "description": "Led or organised real-road L4 automated-vehicle experiments, including investigation, experiment design, recruitment, project management, multimodal data analysis and visualisation.",
+      "outcomes": ["L4 automated vehicle", "EEG", "Eye tracking", "HRV/EDA", "Interviews"],
+      "source": "Resume PDF and LinkedIn profile PDF"
+    },
+    {
+      "name": "Human-centric on-road vehicle multimodal dataset",
+      "category": "Research leadership",
+      "period": "2022 - 2023",
+      "description": "Research project leadership for a multimodal dataset involving expert drivers and passengers, including system construction, software/hardware setup, experiment design, data processing, analysis and writing.",
+      "outcomes": ["Multimodal dataset", "Drivers and passengers", "SOP", "Scientific Data target/output"],
+      "source": "Resume PDF and Google Scholar PDF"
+    },
+    {
+      "name": "Automotive HMI UX consultancy projects",
+      "category": "Industry UX research",
+      "period": "Oct 2023 - Jan 2024",
+      "description": "Worked as a user researcher on BAIC off-road vehicle HMI design, with LinkedIn profile material also listing Mercedes-Benz and Volvo HMI design consultancy participation.",
+      "outcomes": ["BAIC", "Mercedes-Benz", "Volvo", "Heuristic evaluation", "User research"],
+      "source": "LinkedIn profile PDFs and resume PDF"
+    },
+    {
+      "name": "Multimodal intuitive and deictic in-vehicle interfaces",
+      "category": "Automotive HCI",
+      "period": "2021 - 2023",
+      "description": "Designed and prototyped in-vehicle multimodal experiences using JavaScript, Python, Logitech G29 driving controls and Wizard-of-Oz methods in simulator and autonomous-vehicle contexts.",
+      "outcomes": ["Voice", "Pointing gesture", "AR display", "Wizard-of-Oz", "SPSS/Python analysis"],
+      "source": "Resume PDF and arXiv preprint"
+    },
+    {
+      "name": "PwC cloud-based software engineering projects",
+      "category": "Software engineering",
+      "period": "2019 - 2021",
+      "description": "Delivered cloud-based web applications and embedded Power BI dashboards, developed a Python sentiment analysis component, and contributed to six financial risk compliance projects and more than ten deployments.",
+      "outcomes": ["Node.js", "React.js", "PostgreSQL", "Azure", "Agile/JIRA", "Tier 1 feedback"],
+      "source": "Resume PDF and LinkedIn profile PDFs"
+    },
+    {
+      "name": "NDLS training management and evaluation system",
+      "category": "Software copyright",
+      "period": "2018 - 2019",
+      "description": "Developed administrator tools and result-enquiry functionality for a National Disaster Life Support training management and evaluation system.",
+      "outcomes": ["Software Copyright No. 4434202", "Java/J2SE", "PostgreSQL", "Training system"],
+      "source": "Resume PDF and DOC text fragments"
+    },
+    {
+      "name": "AR-supported car museum extended experience",
+      "category": "Master project",
+      "period": "2021 - 2022",
+      "description": "Designed an AR webcam application experience for a British classic car museum, including storyboard, ideation cards, concept design, high-fidelity AR.js prototype and user testing.",
+      "outcomes": ["AR.js", "Webcam AR", "UX design", "Museum experience"],
+      "source": "Resume PDF"
+    },
+    {
+      "name": "Lung cancer nodule detection based on AlexNet CNN",
+      "category": "Undergraduate dissertation",
+      "period": "2020",
+      "description": "Developed a model verified with 1851 CT images from the LIDC-IDRI database using AlexNet CNN, image recognition and RGB overlap methods.",
+      "outcomes": ["CNN", "Image recognition", "LIDC-IDRI", "Machine learning"],
+      "source": "Resume PDF"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Associate (PhD)",
+      "organisation": "QUT Design Academy",
+      "period": "Mar 2024 - Present",
+      "description": "Participates in interdisciplinary academic research activities on automotive UX and assists with Design Lab event coordination."
+    },
+    {
+      "role": "PhD Candidate",
+      "organisation": "AVR3 / CARRS-Q, Queensland University of Technology",
+      "period": "Feb 2024 - Present",
+      "description": "Organises and designs test-track studies with a real autonomous vehicle, integrates multimodal systems for safety cue evaluation, and serves as Web Co-chair of AutoUI 2025."
+    },
+    {
+      "role": "HMI UX Researcher",
+      "organisation": "CapsuleTech",
+      "period": "Oct 2023 - Jan 2024",
+      "description": "Participated in BAIC off-road vehicle, Mercedes-Benz and Volvo HMI design consultancy projects as a user researcher."
+    },
+    {
+      "role": "Human-Computer Interaction Researcher",
+      "organisation": "Tsinghua University",
+      "period": "Oct 2022 - Oct 2023",
+      "description": "Worked with the HCI Research Group, Intelligent Transportation Lab, DISCOVER Lab and Institute of Intelligent Industry on L4 automated-vehicle road experiments, enterprise projects and national funding projects."
+    },
+    {
+      "role": "Software Engineer Associate",
+      "organisation": "PwC Shanghai Acceleration Center",
+      "period": "Jul 2021",
+      "description": "Received Tier 1 performance feedback, joined the Future Talent Program and worked on web-based and cloud-based B2B projects with a focus on Node.js."
+    },
+    {
+      "role": "Junior Software Engineer Specialist",
+      "organisation": "PwC Shanghai Acceleration Center",
+      "period": "Jul 2020 - Jun 2021",
+      "description": "Delivered Azure-based web applications and Power BI dashboards with Node.js, React.js and PostgreSQL; drove M&A requirement analysis and global teamwork; contributed to six compliance projects and more than ten deployments."
+    },
+    {
+      "role": "Junior Software Engineer Intern",
+      "organisation": "PwC Shanghai Acceleration Center",
+      "period": "Jul 2019 - Jun 2020",
+      "description": "Completed internship and received PwC Advisory Shanghai AC FY20 Internship Orientation Best Individual."
+    },
+    {
+      "role": "Software Development Intern",
+      "organisation": "Guangzhou Innovision Marketing Co., Ltd. (Shanghai Branch)",
+      "period": "Jul 2017 - Sep 2017",
+      "description": "Worked on Java software development for revenue recognition and cost confirmation in a car advertising company context."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Doctor of Philosophy",
+      "institution": "Queensland University of Technology",
+      "period": "Feb 2024 - Feb 2028",
+      "details": "Human-Machine Interface research for automated vehicles."
+    },
+    {
+      "degree": "MSc in Human-Computer Interaction",
+      "institution": "University of Nottingham",
+      "period": "Jul 2021 - Dec 2022",
+      "details": "Graduated with Distinction; GPA 4.0."
+    },
+    {
+      "degree": "Visiting Study",
+      "institution": "University of Canterbury",
+      "period": "Jan 2019 - Feb 2019",
+      "details": "Cultural workshop and innovation training; ranked #1 in the visiting study cohort."
+    },
+    {
+      "degree": "BEng in Software Engineering",
+      "institution": "Sanda University",
+      "period": "Sep 2016 - Jul 2020",
+      "details": "GPA 3.81/4.0; ranked #1 in the software engineering course."
+    }
+  ],
+  "skills": [
+    "Python",
+    "JavaScript",
+    "Node.js",
+    "Vue.js",
+    "React.js",
+    "Three.js",
+    "SQL",
+    "LaTeX",
+    "Java",
+    "C",
+    "Linux",
+    "SPSS Statistics",
+    "CARLA Simulator",
+    "Logitech G29",
+    "E-Prime",
+    "MATLAB",
+    "Tobii Pro Lab",
+    "Empatica E4",
+    "Tableau",
+    "Alteryx",
+    "AWS",
+    "Azure",
+    "Power BI",
+    "AR/VR",
+    "Machine learning",
+    "Quantitative and qualitative user studies"
+  ],
+  "certifications": [
+    "Human-Centered Design",
+    "ISTQB-FL Certified Tester",
+    "Digital Acumen",
+    "National Computer Rank Examination (Java) Level II"
+  ],
+  "languages": [
+    "English",
+    "Chinese (native or bilingual)",
+    "Cantonese (native or bilingual)"
+  ],
+  "awards": [
+    {
+      "name": "Chair for Empathic Machines Postgraduate Research Scholarship",
+      "year": "2024",
+      "organisation": "QUT / Chair for Empathic Machines",
+      "source": "QUT CARRS-Q public profile"
+    },
+    {
+      "name": "Excellent Graduate of Shanghai",
+      "year": "Jun 2020",
+      "organisation": "Shanghai, China",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "China Telecom Scholarship",
+      "year": "Apr 2020",
+      "organisation": "China",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "National Scholarship",
+      "year": "Dec 2019",
+      "organisation": "China",
+      "source": "Resume PDF and LinkedIn profile PDF"
+    },
+    {
+      "name": "Special Prize for Comprehensive Scholarship",
+      "year": "Nov 2019",
+      "organisation": "Sanda University",
+      "source": "Resume PDF"
+    },
+    {
+      "name": "Software Copyright No. 4434202 for NDLS System V1.0",
+      "year": "Oct 2019",
+      "organisation": "China",
+      "source": "Resume PDF"
+    },
+    {
+      "name": "Second Prize, China Undergraduate Mathematical Contest in Modelling",
+      "year": "Dec 2019",
+      "organisation": "Shanghai, China",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "Champion, Urban Innovation Competition",
+      "year": "Feb 2019",
+      "organisation": "University of Canterbury",
+      "source": "Resume PDF"
+    },
+    {
+      "name": "Third Prize, Network Technology Challenge",
+      "year": "Apr 2019",
+      "organisation": "East China, China",
+      "source": "Resume PDF"
+    },
+    {
+      "name": "Third Prize, Blue Bridge Cup National Software and Information Technology Professionals Competition, Java Group",
+      "year": "Mar 2019",
+      "organisation": "Shanghai, China",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "First Prize for Comprehensive Scholarship",
+      "year": "Sep 2018 and Oct 2017",
+      "organisation": "Sanda University",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "Excellent Student Leader",
+      "year": "Sep 2018",
+      "organisation": "Sanda University",
+      "source": "Resume PDF"
+    },
+    {
+      "name": "Second Prize, Blue Bridge Cup National Software and Information Technology Professionals Competition, Java Group",
+      "year": "Apr 2018",
+      "organisation": "Shanghai, China",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "Third Prize, China Undergraduate Mathematical Contest in Modelling",
+      "year": "Dec 2017",
+      "organisation": "Shanghai, China",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    },
+    {
+      "name": "Person of Year of Campus",
+      "year": "Nov 2017",
+      "organisation": "Sanda University",
+      "source": "LinkedIn awards screenshot"
+    },
+    {
+      "name": "Top 10, Sanda University Public Speaking Platform Speech Competition",
+      "year": "2017",
+      "organisation": "Sanda University",
+      "source": "Resume PDF and LinkedIn awards screenshot"
+    }
+  ],
+  "recent": [
+    {
+      "date": "2025",
+      "title": "Web Co-chair of AutoUI 2025",
+      "location": "AutomotiveUI 2025",
+      "description": "Served as Web Co-chair while continuing doctoral research in automated driving HMI."
+    },
+    {
+      "date": "2025",
+      "title": "AutomotiveUI 2025 research outputs",
+      "location": "Brisbane, Australia",
+      "description": "Multiple AutomotiveUI 2025 outputs connected with vestibular cues, LLM conversational agents, deictic interaction, gaze patterns and passenger comfort/perceived safety."
+    },
+    {
+      "date": "2026",
+      "title": "Recent activities will be updated manually",
+      "location": "Editable in content.json",
+      "description": "Use this section for talks, submissions, demos, field studies, media, visits and awards as they happen."
+    }
+  ],
+  "photoWall": [
+    {
+      "src": "images/bike.jpg",
+      "caption": "My Bike"
+    },
+    {
+      "src": "images/photoWall/URinCompany.jpg",
+      "caption": "User Research in HMI Company"
+    },
+    {
+      "src": "images/photoWall/Academy Team Photo.jpg",
+      "caption": "BMW Academy Team"
+    },
+    {
+      "src": "images/photoWall/UoN.png",
+      "caption": "The Lab at UoN studying Master"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Local Google Scholar PDF extract",
+      "url": "https://scholar.google.com/citations?user=lPzPwh0AAAAJ&hl=en"
+    },
+    {
+      "label": "Local LinkedIn profile PDF extracts",
+      "url": "https://www.linkedin.com/in/laurence-yu/"
+    },
+    {
+      "label": "Local resume PDF extract",
+      "url": "cv/Yueteng-Yu-CV.pdf"
+    },
+    {
+      "label": "QUT CARRS-Q profile",
+      "url": "https://research.qut.edu.au/carrsq/staff/yueteng-yu/"
+    },
+    {
+      "label": "BMW Group + QUT Design Academy research",
+      "url": "https://www.bmwgroupqutdesign.academy/research"
+    },
+    {
+      "label": "AutomotiveUI 2025 Main Proceedings",
+      "url": "https://www.auto-ui.org/25/proceedings/main-proceedings/"
+    },
+    {
+      "label": "AutomotiveUI 2025 Adjunct Proceedings",
+      "url": "https://www.auto-ui.org/25/proceedings/adjunct-proceedings/"
+    },
+    {
+      "label": "arXiv: Small Talk, Big Impact?",
+      "url": "https://arxiv.org/abs/2510.25421"
+    },
+    {
+      "label": "arXiv: Tell me about that church",
+      "url": "https://arxiv.org/abs/2311.04160"
+    },
+    {
+      "label": "arXiv: Designing for Dignity while Driving",
+      "url": "https://arxiv.org/abs/2510.26015"
+    },
+    {
+      "label": "DOI: Measuring passenger comfort and perceived safety",
+      "url": "https://doi.org/10.1145/3744335.3749142"
+    }
+  ]
+}

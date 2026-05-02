@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yueteng (Laurence) Yu - automated driving, HMI, HCI and automotive UX research profile.">
+  <title>Yueteng (Laurence) Yu | Automated Driving HMI Research</title>
+  <style>
+    :root {
+      --primary: #1c69d4;
+      --primary-active: #0653b6;
+      --ink: #262626;
+      --body: #3c3c3c;
+      --muted: #6b6b6b;
+      --muted-soft: #9a9a9a;
+      --hairline: #e6e6e6;
+      --hairline-strong: #cccccc;
+      --canvas: #ffffff;
+      --surface-soft: #f7f7f7;
+      --surface-card: #fafafa;
+      --surface-dark: #1a2129;
+      --surface-dark-elevated: #262e38;
+      --on-dark: #ffffff;
+      --on-dark-soft: #bbbbbb;
+      --max: min(1500px, calc(100vw - clamp(40px, 7vw, 180px)));
+      --nav-height: 64px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--body);
+      background: var(--canvas);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, a.button {
+      min-height: 48px;
+      border: 0;
+      border-radius: 0;
+      padding: 14px 28px;
+      background: var(--primary);
+      color: #fff;
+      font: 700 14px/1 Inter, system-ui, sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    button:hover, a.button:hover { background: var(--primary-active); }
+
+    a.button.secondary, button.secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--hairline-strong);
+    }
+
+    a.button.secondary:hover, button.secondary:hover {
+      border-color: var(--ink);
+      background: var(--surface-soft);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -80px;
+      z-index: 9999;
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 14px;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: var(--nav-height);
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--hairline);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      width: var(--max);
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .menu-toggle { display: none; }
+
+    main { overflow: hidden; }
+
+    .section {
+      padding: 80px 0;
+      scroll-margin-top: var(--nav-height);
+    }
+
+    .section.soft { background: var(--surface-soft); }
+    .section.dark { background: var(--surface-dark); color: var(--on-dark); }
+
+    .container {
+      width: var(--max);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section.dark .eyebrow { color: #8fbdff; }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .section.dark h1,
+    .section.dark h2,
+    .section.dark h3 { color: var(--on-dark); }
+
+    h1 {
+      max-width: 860px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.04;
+    }
+
+    h2 {
+      max-width: 760px;
+      margin-bottom: 30px;
+      font-size: clamp(32px, 4.4vw, 54px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: var(--body);
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .section.dark .lead,
+    .section.dark p { color: var(--on-dark-soft); }
+
+    .hero {
+      display: grid;
+      align-items: center;
+      background: var(--surface-dark);
+      color: var(--on-dark);
+      padding: clamp(56px, 6vw, 96px) 0;
+    }
+
+    .hero-grid {
+      width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+      gap: clamp(36px, 5vw, 86px);
+      align-items: center;
+    }
+
+    .hero-copy {
+      align-self: center;
+      padding: 0;
+    }
+
+    .hero h1 { color: #fff; }
+
+    .hero p { color: var(--on-dark-soft); }
+
+    .hero-media {
+      position: relative;
+      justify-self: end;
+      width: min(100%, 360px);
+      aspect-ratio: 9 / 16;
+      min-height: 0;
+      background: #111820;
+      border: 1px solid rgba(255,255,255,0.18);
+      overflow: hidden;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.94;
+      background: #111820;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(26,33,41,0.08), transparent 42%);
+      pointer-events: none;
+    }
+
+    .hero-media.portrait {
+      aspect-ratio: 9 / 16;
+    }
+
+    .hero-actions,
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-actions a.button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .link-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
+    .hero-actions .secondary {
+      color: #fff;
+      border-color: rgba(255,255,255,0.75);
+    }
+
+    .hero-actions .secondary .link-icon,
+    .hero-actions .secondary span {
+      color: #fff;
+    }
+
+    .hero-actions .secondary:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      border-color: #fff;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .fact {
+      min-height: 132px;
+      padding: 24px;
+      border-right: 1px solid var(--hairline);
+    }
+
+    .fact:last-child { border-right: 0; }
+
+    .fact strong {
+      display: block;
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+      gap: 64px;
+      align-items: start;
+    }
+
+    .portrait {
+      background: var(--surface-card);
+    }
+
+    .portrait img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .bio-list p {
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 0;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .focus-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--hairline);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--hairline);
+      border: 1px solid var(--hairline);
+    }
+
+    .card {
+      min-height: 100%;
+      padding: 0;
+      background: var(--canvas);
+    }
+
+    .soft .card { background: var(--canvas); }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .teaser {
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(28,105,212,0.14), rgba(26,33,41,0.04)),
+        var(--surface-card);
+      border-bottom: 1px solid var(--hairline);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .teaser img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .research-teaser {
+      aspect-ratio: 16 / 10;
+    }
+
+    .project-teaser {
+      aspect-ratio: 21 / 9;
+    }
+
+    .teaser span {
+      padding: 12px;
+      text-align: center;
+    }
+
+    .card .meta,
+    .timeline .meta {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .card p { color: var(--body); }
+
+    .authors {
+      color: var(--muted);
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 6px 10px;
+      border: 1px solid var(--hairline-strong);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 400;
+      background: var(--canvas);
+    }
+
+    .text-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .text-link::after {
+      content: ">";
+      margin-left: 8px;
+      color: var(--primary);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1px;
+      background: var(--hairline);
+      border: 1px solid var(--hairline);
+    }
+
+    .project-card {
+      background: var(--canvas);
+    }
+
+    .project-card-inner {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .project-index {
+      display: grid;
+      place-items: center;
+      width: 88px;
+      height: 88px;
+      color: var(--primary);
+      background: var(--surface-card);
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 76px 180px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .experience-logo {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-card);
+      border: 1px solid var(--hairline);
+      color: var(--primary);
+      font-size: 18px;
+      font-weight: 700;
+      overflow: hidden;
+    }
+
+    .experience-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+      background: #fff;
+    }
+
+    .compact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .timeline-item time,
+    .timeline-item .period {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .cv-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+      gap: 64px;
+      align-items: start;
+    }
+
+    .cv-layout .action-row {
+      gap: 10px;
+      margin-top: 18px;
+      margin-bottom: 28px;
+    }
+
+    .cv-layout .action-row button,
+    .cv-layout .action-row a.button {
+      min-height: 38px;
+      padding: 10px 16px;
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .panel {
+      padding: 28px;
+      background: var(--surface-card);
+      border: 1px solid var(--hairline);
+    }
+
+    .panel h3 { margin-bottom: 18px; }
+
+    .award-list {
+      display: grid;
+      gap: 1px;
+      max-height: 460px;
+      overflow-y: auto;
+      background: var(--hairline);
+      border: 1px solid var(--hairline);
+      scrollbar-color: var(--primary) var(--surface-soft);
+      scrollbar-width: thin;
+    }
+
+    .award-list::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .award-list::-webkit-scrollbar-track {
+      background: var(--surface-soft);
+    }
+
+    .award-list::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border: 2px solid var(--surface-soft);
+    }
+
+    .award {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 18px;
+      padding: 16px 20px;
+      background: var(--canvas);
+    }
+
+    .award-year {
+      color: var(--primary);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .award h3 {
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .award p {
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .activity-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .activity {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 36px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .activity-date {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .activity-location {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 1px;
+      background: var(--hairline);
+      border: 1px solid var(--hairline);
+    }
+
+    .photo-tile {
+      position: relative;
+      min-height: 340px;
+      background: var(--surface-card);
+      overflow: hidden;
+    }
+
+    .photo-tile:first-child { min-height: 520px; }
+
+    .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 16px 18px;
+      color: #fff;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.72));
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 28px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .source-grid a {
+      min-height: 86px;
+      padding: 18px;
+      color: #fff;
+      background: var(--surface-dark-elevated);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    footer {
+      padding: 42px 0;
+      background: var(--surface-soft);
+      border-top: 1px solid var(--hairline);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .cv-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid { min-height: auto; }
+
+      .hero-copy {
+        padding: 0 0 8px;
+      }
+
+      .hero-media {
+        order: -1;
+        justify-self: start;
+        width: min(100%, 360px);
+      }
+
+      .facts,
+      .source-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-grid,
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        padding: 0;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: var(--nav-height) 0 auto 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 20px 24px;
+        background: var(--canvas);
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        display: block;
+        min-height: 48px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .section { padding: 56px 0; }
+
+      .hero {
+        padding: 32px 0 48px;
+      }
+
+      .hero-grid {
+        gap: 28px;
+      }
+
+      .hero-copy { padding: 0; }
+
+      .facts,
+      .card-grid,
+      .project-grid,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fact { border-right: 0; border-bottom: 1px solid var(--hairline); }
+      .fact:last-child { border-bottom: 0; }
+
+      .timeline-item,
+      .award {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .project-card-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .activity {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .project-index {
+        width: 72px;
+        height: 72px;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero,
+      #motivation,
+      #research,
+      #projects,
+      #recent,
+      #photos,
+      #sources,
+      footer,
+      .action-row {
+        display: none !important;
+      }
+
+      body { font-size: 12px; }
+      .section { padding: 0; }
+      .container { width: 100%; }
+      h2 { font-size: 26px; }
+      .cv-layout { grid-template-columns: 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="nav-inner" aria-label="Primary navigation">
+      <a class="brand" href="#home" data-field="brand">Yueteng Yu</a>
+      <button class="menu-toggle secondary" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#recent">Recent</a></li>
+        <li><a href="#photos">Photos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-field="hero-location">Brisbane, Australia</p>
+          <h1 id="hero-title">Yueteng (Laurence) Yu</h1>
+          <p class="lead" data-field="hero-title-text">Automated driving HMI researcher.</p>
+          <p data-field="hero-statement"></p>
+          <div class="hero-actions" data-field="hero-links"></div>
+        </div>
+        <div class="hero-media portrait">
+          <img data-field="hero-image" src="images/bike.jpg" alt="Automotive research image">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Profile highlights">
+      <div class="container">
+        <div class="facts" data-field="highlights"></div>
+      </div>
+    </section>
+
+    <section id="motivation" class="section soft" aria-labelledby="motivation-title">
+      <div class="container split">
+        <figure class="portrait">
+          <img data-field="portrait" src="images/Yueteng Yu-lowPixel.jpg" alt="Yueteng Yu portrait">
+        </figure>
+        <div>
+          <p class="eyebrow">Motivation</p>
+          <h2 id="motivation-title">Building human-centred confidence in automated driving.</h2>
+          <div class="bio-list" data-field="summary"></div>
+          <h3>Research Focus</h3>
+          <ul class="focus-list" data-field="focus-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section" aria-labelledby="research-title">
+      <div class="container">
+        <p class="eyebrow">Research Outcomes</p>
+        <h2 id="research-title">Publications and research outputs.</h2>
+        <div class="card-grid" data-field="publications"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section soft" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="eyebrow">Project Experience</p>
+        <h2 id="projects-title">From simulator prototypes to autonomous vehicle studies.</h2>
+        <div class="project-grid" data-field="projects"></div>
+      </div>
+    </section>
+
+    <section id="cv" class="section" aria-labelledby="cv-title">
+      <div class="container cv-layout">
+        <div>
+          <p class="eyebrow">CV</p>
+          <h2 id="cv-title">Research-oriented profile.</h2>
+          <div class="action-row">
+            <button type="button" data-action="print-cv">Save CV as PDF</button>
+            <a class="button secondary" data-field="cv-pdf" href="#" download>Download PDF</a>
+            <a class="button secondary" data-field="cv-print-page" href="#">Open One-page CV</a>
+          </div>
+          <h3>Experience</h3>
+          <div class="timeline" data-field="experience"></div>
+        </div>
+        <aside class="panel">
+          <h3>Education</h3>
+          <div class="timeline" data-field="education"></div>
+          <h3>Skills</h3>
+          <div class="compact-list" data-field="skills"></div>
+          <h3>Certifications</h3>
+          <div class="compact-list" data-field="certifications"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="awards" class="section soft" aria-labelledby="awards-title">
+      <div class="container">
+        <p class="eyebrow">Awards</p>
+        <h2 id="awards-title">Selected scholarships, awards and outcomes.</h2>
+        <div class="award-list" data-field="awards"></div>
+      </div>
+    </section>
+
+    <section id="recent" class="section" aria-labelledby="recent-title">
+      <div class="container">
+        <p class="eyebrow">Recent Activities</p>
+        <h2 id="recent-title">Updates to add as the work moves.</h2>
+        <div class="activity-list" data-field="recent"></div>
+      </div>
+    </section>
+
+    <section id="photos" class="section soft" aria-labelledby="photos-title">
+      <div class="container">
+        <p class="eyebrow">Photo Wall</p>
+        <h2 id="photos-title">Selected automotive research moments.</h2>
+        <div class="photo-grid" data-field="photos"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>@Laurence Yu 2026 | Personal Profile</span>
+      <span data-field="footer-name">Updated 2026-05-02</span>
+    </div>
+  </footer>
+
+  <script>
+    const byField = (name) => document.querySelector(`[data-field="${name}"]`);
+    const allByField = (name) => [...document.querySelectorAll(`[data-field="${name}"]`)];
+    const esc = (value = "") => String(value).replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[char]));
+
+    function safeHtml(value = "") {
+      const template = document.createElement("template");
+      template.innerHTML = String(value);
+      const allowed = new Set(["A", "BR", "EM", "I", "STRONG", "B", "SMALL", "SUP", "SUB", "CODE", "SPAN"]);
+      const walker = document.createTreeWalker(template.content, NodeFilter.SHOW_ELEMENT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach((node) => {
+        if (!allowed.has(node.tagName)) {
+          node.replaceWith(...node.childNodes);
+          return;
+        }
+        [...node.attributes].forEach((attr) => {
+          const name = attr.name.toLowerCase();
+          if (name.startsWith("on") || name === "style") node.removeAttribute(attr.name);
+          if (node.tagName !== "A" && name !== "class") node.removeAttribute(attr.name);
+        });
+        if (node.tagName === "A") {
+          [...node.attributes].forEach((attr) => {
+            if (!["href", "title", "target", "rel", "class"].includes(attr.name.toLowerCase())) {
+              node.removeAttribute(attr.name);
+            }
+          });
+          const href = node.getAttribute("href") || "";
+          if (/^\s*javascript:/i.test(href)) node.removeAttribute("href");
+          if (node.getAttribute("target") === "_blank") node.setAttribute("rel", "noopener");
+        }
+      });
+      return template.innerHTML;
+    }
+
+    const tagList = (tags = []) => tags.map((tag) => `<span class="tag">${esc(tag)}</span>`).join("");
+
+    function teaserMarkup(item, kind, label) {
+      const src = item.teaser || item.logo || "";
+      const cls = kind === "project" ? "project-teaser" : "research-teaser";
+      if (src) {
+        return `<div class="teaser ${cls}"><img src="${esc(src)}" alt="${esc(item.teaserAlt || label)}"></div>`;
+      }
+      return `<div class="teaser ${cls}"><span>${esc(label)}</span></div>`;
+    }
+
+    function initials(text = "") {
+      return text.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
+    }
+
+    function iconFor(name = "profile") {
+      const icons = {
+        mail: '<svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>',
+        scholar: '<svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l4 2.18v5.1C5 18.34 8.13 21 12 21s7-2.66 7-4.72v-5.1L23 9 12 3Zm0 2.27L18.84 9 12 12.73 5.16 9 12 5.27Zm5 10.88C17 17.28 14.8 19 12 19s-5-1.72-5-2.85v-3.88l5 2.73 5-2.73v3.88Z"/></svg>',
+        linkedin: '<svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.36 8h4.28v14H.36V8Zm7.4 0h4.1v1.92h.06c.57-1.08 1.98-2.22 4.08-2.22 4.36 0 5.16 2.87 5.16 6.6V22h-4.28v-6.82c0-1.63-.03-3.72-2.27-3.72-2.27 0-2.62 1.77-2.62 3.6V22H7.76V8Z"/></svg>',
+        github: '<svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.97 3.22 9.2 7.69 10.69.56.1.76-.24.76-.54v-2.1c-3.13.68-3.79-1.35-3.79-1.35-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 .1 2.63.98 3.23.75.1-.73.39-1.23.71-1.51-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15.9-.25 1.86-.38 2.82-.38.96 0 1.92.13 2.82.38 2.15-1.45 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.64 5.27-5.15 5.55.4.35.76 1.04.76 2.1v3.13c0 .3.2.65.77.54 4.46-1.49 7.68-5.72 7.68-10.69C23.25 5.48 18.27.5 12 .5Z"/></svg>',
+        profile: '<svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-4.42 0-8 2.24-8 5v3h16v-3c0-2.76-3.58-5-8-5Z"/></svg>'
+      };
+      return icons[name] || icons.profile;
+    }
+
+    async function loadContent() {
+      const response = await fetch("content.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`Unable to load content.json (${response.status})`);
+      return response.json();
+    }
+
+    function renderProfile(data) {
+      document.title = data.meta.siteTitle;
+      byField("brand").textContent = data.profile.shortName;
+      byField("hero-location").textContent = data.profile.location;
+      document.getElementById("hero-title").textContent = data.profile.name;
+      byField("hero-title-text").textContent = data.profile.title;
+      byField("hero-statement").innerHTML = safeHtml(data.profile.statement);
+      byField("hero-image").src = data.profile.heroImage;
+      byField("portrait").src = data.profile.portrait;
+      byField("footer-name").textContent = `Updated ${data.meta.lastUpdated}`;
+      byField("hero-links").innerHTML = data.profile.links.map((link, index) => {
+        const cls = index === 0 ? "button" : "button secondary";
+        return `<a class="${cls}" href="${esc(link.url)}" target="_blank" rel="noopener">${iconFor(link.icon)}<span>${esc(link.label)}</span></a>`;
+      }).join("");
+      byField("summary").innerHTML = data.profile.summary.map((paragraph) => `<p>${safeHtml(paragraph)}</p>`).join("");
+      byField("focus-list").innerHTML = data.researchFocus.map((item) => `<li>${esc(item)}</li>`).join("");
+      byField("cv-pdf").href = data.meta.cvPdf;
+      byField("cv-print-page").href = data.meta.cvPrintPage;
+    }
+
+    function renderHighlights(items) {
+      byField("highlights").innerHTML = items.map((item) => `
+        <div class="fact">
+          <strong>${esc(item.value)}</strong>
+          <span>${esc(item.label)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderPublications(items) {
+      byField("publications").innerHTML = items.map((item) => `
+        <article class="card">
+          ${teaserMarkup(item, "research", "Research teaser")}
+          <div class="card-body">
+            <div class="meta">${esc(item.type)} | ${esc(item.year)}</div>
+            <h3>${esc(item.title)}</h3>
+            <p><strong>${safeHtml(item.venue)}</strong></p>
+            <p>${safeHtml(item.summary)}</p>
+            <p class="authors">${safeHtml(item.authors)}</p>
+            <div class="tags">${tagList(item.tags)}</div>
+            <a class="text-link" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.sourceLabel)}</a>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderProjects(items) {
+      byField("projects").innerHTML = items.map((item, index) => `
+        <article class="project-card">
+          ${teaserMarkup(item, "project", "Project teaser")}
+          <div class="project-card-inner">
+            <div class="project-index">${String(index + 1).padStart(2, "0")}</div>
+            <div>
+              <div class="meta">${esc(item.category)} | ${esc(item.period)}</div>
+              <h3>${esc(item.name)}</h3>
+              <p>${safeHtml(item.description)}</p>
+              <div class="tags">${tagList(item.outcomes)}</div>
+              <p class="meta">Source: ${safeHtml(item.source)}</p>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderExperience(items) {
+      byField("experience").innerHTML = items.map((item) => `
+        <article class="timeline-item">
+          <div class="experience-logo">
+            ${item.logo ? `<img src="${esc(item.logo)}" alt="${esc(item.organisation)} logo">` : `<span>${esc(initials(item.organisation))}</span>`}
+          </div>
+          <div class="period">${esc(item.period)}</div>
+          <div>
+            <h3>${esc(item.role)}</h3>
+            <p><strong>${esc(item.organisation)}</strong></p>
+            <p>${safeHtml(item.description)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderEducation(items) {
+      byField("education").innerHTML = items.map((item) => `
+        <article class="timeline-item">
+          <div class="period">${esc(item.period)}</div>
+          <div>
+            <h3>${esc(item.degree)}</h3>
+            <p><strong>${esc(item.institution)}</strong></p>
+            <p>${safeHtml(item.details)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderCompactList(fieldName, items) {
+      const node = byField(fieldName);
+      if (!node) return;
+      node.innerHTML = items.map((item) => `<span class="tag">${esc(item)}</span>`).join("");
+    }
+
+    function renderAwards(items) {
+      byField("awards").innerHTML = items.map((item) => `
+        <article class="award">
+          <div class="award-year">${esc(item.year)}</div>
+          <div>
+            <h3>${esc(item.name)}</h3>
+            <p>${safeHtml(item.organisation)}</p>
+            <p class="meta">Source: ${safeHtml(item.source)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderRecent(items) {
+      byField("recent").innerHTML = items.map((item) => `
+        <article class="activity">
+          <div>
+            <div class="activity-date">${esc(item.date)}</div>
+            <p class="activity-location">${esc(item.location)}</p>
+          </div>
+          <div>
+            <h3>${esc(item.title)}</h3>
+            <p>${safeHtml(item.description)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderPhotos(items) {
+      byField("photos").innerHTML = items.map((item) => `
+        <figure class="photo-tile">
+          <img src="${esc(item.src)}" alt="${esc(item.caption)}">
+          <figcaption class="photo-caption">${esc(item.caption)}</figcaption>
+        </figure>
+      `).join("");
+    }
+
+    function renderSources(items) {
+      byField("sources").innerHTML = items.map((item) => `
+        <a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.label)}</a>
+      `).join("");
+    }
+
+    function bindNavigation() {
+      const toggle = document.querySelector(".menu-toggle");
+      const links = document.querySelector(".nav-links");
+      toggle.addEventListener("click", () => {
+        const open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+      links.addEventListener("click", (event) => {
+        if (event.target.matches("a")) {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      const sections = [...document.querySelectorAll("main section[id]")];
+      const navLinks = [...document.querySelectorAll(".nav-links a")];
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      sections.forEach((section) => observer.observe(section));
+
+      document.querySelector('[data-action="print-cv"]').addEventListener("click", () => window.print());
+    }
+
+    loadContent()
+      .then((data) => {
+        renderProfile(data);
+        renderHighlights(data.highlights);
+        renderPublications(data.publications);
+        renderProjects(data.projects);
+        renderExperience(data.experience);
+        renderEducation(data.education);
+        renderCompactList("skills", data.skills || []);
+        renderCompactList("certifications", data.certifications || []);
+        renderAwards(data.awards);
+        renderRecent(data.recent);
+        renderPhotos(data.photoWall);
+        bindNavigation();
+      })
+      .catch((error) => {
+        document.getElementById("main").innerHTML = `
+          <section class="section">
+            <div class="container">
+              <h1>Content could not be loaded.</h1>
+              <p>${esc(error.message)}</p>
+            </div>
+          </section>
+        `;
+      });
+  </script>
+</body>
+</html>
