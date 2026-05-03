@@ -373,6 +373,65 @@
       border: 1px solid var(--hairline);
     }
 
+    .paged-shell {
+      display: grid;
+      gap: 18px;
+    }
+
+    .paged-head {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .page-indicator {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      min-width: 92px;
+      text-align: center;
+    }
+
+    .arrow-button {
+      width: 42px;
+      min-height: 42px;
+      padding: 0;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid var(--hairline-strong);
+      background: var(--canvas);
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .arrow-button:hover {
+      background: var(--ink);
+      color: var(--on-dark);
+    }
+
+    .arrow-button:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .arrow-button:disabled:hover {
+      background: var(--canvas);
+      color: var(--ink);
+    }
+
+    .page-surface {
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+
+    .page-surface.switching {
+      opacity: 0;
+      transform: translateX(12px);
+    }
+
     .card {
       min-height: 100%;
       padding: 0;
@@ -663,21 +722,31 @@
     }
 
     .photo-grid {
+      position: relative;
+      overflow: hidden;
+      max-width: 980px;
+      background: transparent;
+      border: 0;
+    }
+
+    .photo-track {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 1px;
-      background: var(--hairline);
-      border: 1px solid var(--hairline);
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 360px);
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      transition: transform 560ms ease;
+      will-change: transform;
     }
 
     .photo-tile {
       position: relative;
-      min-height: 340px;
+      min-height: 0;
+      aspect-ratio: 16 / 10;
       background: var(--surface-card);
       overflow: hidden;
+      border: 1px solid var(--hairline);
     }
-
-    .photo-tile:first-child { min-height: 520px; }
 
     .photo-tile img {
       width: 100%;
@@ -757,8 +826,8 @@
       }
 
       .project-grid,
-      .photo-grid {
-        grid-template-columns: 1fr;
+      .photo-track {
+        grid-auto-columns: minmax(0, calc((100% - 14px) / 2));
       }
     }
 
@@ -809,6 +878,15 @@
       .project-grid,
       .source-grid {
         grid-template-columns: 1fr;
+      }
+
+      .paged-head {
+        justify-content: flex-start;
+      }
+
+      .photo-track {
+        grid-auto-columns: 100%;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
       }
 
       .fact { border-right: 0; border-bottom: 1px solid var(--hairline); }
@@ -904,7 +982,7 @@
         </figure>
         <div>
           <p class="eyebrow">Motivation</p>
-          <h2 id="motivation-title">Building human-centred confidence in automated driving.</h2>
+          <h2 id="motivation-title">Making automated driving safer and more enjoyable for more people.</h2>
           <div class="bio-list" data-field="summary"></div>
           <h3>Research Focus</h3>
           <ul class="focus-list" data-field="focus-list"></ul>
@@ -923,7 +1001,7 @@
     <section id="projects" class="section soft" aria-labelledby="projects-title">
       <div class="container">
         <p class="eyebrow">Project Experience</p>
-        <h2 id="projects-title">From simulator prototypes to autonomous vehicle studies.</h2>
+        <h2 id="projects-title">User-centred automotive & software computing.</h2>
         <div class="project-grid" data-field="projects"></div>
       </div>
     </section>
@@ -988,6 +1066,10 @@
   <script>
     const byField = (name) => document.querySelector(`[data-field="${name}"]`);
     const allByField = (name) => [...document.querySelectorAll(`[data-field="${name}"]`)];
+    const pageState = {
+      publications: { page: 0, size: 8, items: [] },
+      projects: { page: 0, size: 6, items: [] }
+    };
     const esc = (value = "") => String(value).replace(/[&<>"']/g, (char) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -1088,8 +1170,8 @@
       `).join("");
     }
 
-    function renderPublications(items) {
-      byField("publications").innerHTML = items.map((item) => `
+    function publicationCard(item) {
+      return `
         <article class="card">
           ${teaserMarkup(item, "research", "Research teaser")}
           <div class="card-body">
@@ -1102,11 +1184,11 @@
             <a class="text-link" href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.sourceLabel)}</a>
           </div>
         </article>
-      `).join("");
+      `;
     }
 
-    function renderProjects(items) {
-      byField("projects").innerHTML = items.map((item, index) => `
+    function projectCard(item, index) {
+      return `
         <article class="project-card">
           ${teaserMarkup(item, "project", "Project teaser")}
           <div class="project-card-inner">
@@ -1120,7 +1202,43 @@
             </div>
           </div>
         </article>
-      `).join("");
+      `;
+    }
+
+    function renderPaged(kind) {
+      const state = pageState[kind];
+      const totalPages = Math.max(1, Math.ceil(state.items.length / state.size));
+      state.page = Math.min(Math.max(state.page, 0), totalPages - 1);
+      const start = state.page * state.size;
+      const pageItems = state.items.slice(start, start + state.size);
+      const isPublications = kind === "publications";
+      const gridClass = isPublications ? "card-grid" : "project-grid";
+      const cards = isPublications
+        ? pageItems.map(publicationCard).join("")
+        : pageItems.map((item, index) => projectCard(item, start + index)).join("");
+      const node = byField(kind);
+      node.innerHTML = `
+        <div class="paged-shell">
+          <div class="paged-head" aria-label="${isPublications ? "Research" : "Project"} pagination">
+            <button class="arrow-button" type="button" data-page-kind="${kind}" data-page-dir="-1" ${state.page === 0 ? "disabled" : ""} aria-label="Previous page">&#8592;</button>
+            <span class="page-indicator">${state.page + 1} / ${totalPages}</span>
+            <button class="arrow-button" type="button" data-page-kind="${kind}" data-page-dir="1" ${state.page >= totalPages - 1 ? "disabled" : ""} aria-label="Next page">&#8594;</button>
+          </div>
+          <div class="${gridClass} page-surface">${cards}</div>
+        </div>
+      `;
+    }
+
+    function renderPublications(items) {
+      pageState.publications.items = items;
+      pageState.publications.page = 0;
+      renderPaged("publications");
+    }
+
+    function renderProjects(items) {
+      pageState.projects.items = items;
+      pageState.projects.page = 0;
+      renderPaged("projects");
     }
 
     function renderExperience(items) {
@@ -1187,12 +1305,13 @@
     }
 
     function renderPhotos(items) {
-      byField("photos").innerHTML = items.map((item) => `
+      const tiles = items.map((item) => `
         <figure class="photo-tile">
           <img src="${esc(item.src)}" alt="${esc(item.caption)}">
           <figcaption class="photo-caption">${esc(item.caption)}</figcaption>
         </figure>
       `).join("");
+      byField("photos").innerHTML = `<div class="photo-track">${tiles}</div>`;
     }
 
     function renderSources(items) {
@@ -1228,6 +1347,39 @@
       document.querySelector('[data-action="print-cv"]').addEventListener("click", () => window.print());
     }
 
+    function bindPagination() {
+      document.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-page-kind]");
+        if (!button) return;
+        const kind = button.dataset.pageKind;
+        const dir = Number(button.dataset.pageDir);
+        const state = pageState[kind];
+        if (!state) return;
+        const surface = byField(kind).querySelector(".page-surface");
+        surface.classList.add("switching");
+        window.setTimeout(() => {
+          state.page += dir;
+          renderPaged(kind);
+        }, 180);
+      });
+    }
+
+    function bindPhotoCarousel() {
+      const track = document.querySelector(".photo-track");
+      if (!track) return;
+      const slides = [...track.children];
+      if (slides.length <= 4) return;
+      let index = 0;
+      window.setInterval(() => {
+        const visibleColumns = window.matchMedia("(max-width: 760px)").matches ? 1 : 2;
+        const maxColumn = Math.max(0, Math.ceil(slides.length / 2) - visibleColumns);
+        index = index >= maxColumn ? 0 : index + 1;
+        const targetSlide = slides[index * 2] || slides[0];
+        const offset = targetSlide.offsetLeft;
+        track.style.transform = `translateX(${-offset}px)`;
+      }, 3600);
+    }
+
     loadContent()
       .then((data) => {
         renderProfile(data);
@@ -1242,6 +1394,8 @@
         renderRecent(data.recent);
         renderPhotos(data.photoWall);
         bindNavigation();
+        bindPagination();
+        bindPhotoCarousel();
       })
       .catch((error) => {
         document.getElementById("main").innerHTML = `
