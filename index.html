@@ -590,6 +590,15 @@
       overflow: hidden;
     }
 
+    a.experience-logo {
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    a.experience-logo:hover {
+      border-color: var(--primary);
+      background: #fff;
+    }
+
     .experience-logo img {
       width: 100%;
       height: 100%;
@@ -631,6 +640,20 @@
       padding: 10px 16px;
       font-size: 12px;
       line-height: 1;
+    }
+
+    .cv-layout .action-row [hidden] {
+      display: none;
+    }
+
+    .button.disabled,
+    .button[aria-disabled="true"] {
+      opacity: 0.45;
+      pointer-events: none;
+      cursor: not-allowed;
+      background: var(--surface-soft);
+      color: var(--muted);
+      border-color: var(--hairline-strong);
     }
 
     .panel {
@@ -693,16 +716,37 @@
     .activity-list {
       display: grid;
       gap: 0;
+      max-height: 360px;
+      overflow-y: auto;
       border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      scrollbar-color: var(--primary) var(--surface-soft);
+      scrollbar-width: thin;
+    }
+
+    .activity-list::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .activity-list::-webkit-scrollbar-track {
+      background: var(--surface-soft);
+    }
+
+    .activity-list::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border: 2px solid var(--surface-soft);
     }
 
     .activity {
       display: grid;
       grid-template-columns: 170px 1fr;
       gap: 36px;
-      padding: 26px 0;
+      padding: 18px 20px;
       border-bottom: 1px solid var(--hairline);
+      background: var(--canvas);
     }
+
+    .activity:last-child { border-bottom: 0; }
 
     .activity-date {
       color: var(--primary);
@@ -719,6 +763,16 @@
       font-weight: 400;
       letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    .activity h3 {
+      margin-bottom: 6px;
+      font-size: 17px;
+    }
+
+    .activity p {
+      margin-bottom: 0;
+      font-size: 14px;
     }
 
     .photo-grid {
@@ -942,9 +996,9 @@
       <a class="brand" href="#home" data-field="brand">Yueteng Yu</a>
       <button class="menu-toggle secondary" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <ul id="nav-links" class="nav-links">
-        <li><a href="#motivation">Motivation</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#motivation">Motivation</a></li>
+        <li data-nav-item="projects"><a href="#projects">Projects</a></li>
         <li><a href="#cv">CV</a></li>
         <li><a href="#awards">Awards</a></li>
         <li><a href="#recent">Recent</a></li>
@@ -975,14 +1029,22 @@
       </div>
     </section>
 
-    <section id="motivation" class="section soft" aria-labelledby="motivation-title">
+    <section id="research" class="section soft" aria-labelledby="research-title">
+      <div class="container">
+        <p class="eyebrow">Research</p>
+        <h2 id="research-title">Recent research outputs.</h2>
+        <div class="card-grid" data-field="publications"></div>
+      </div>
+    </section>
+
+    <section id="motivation" class="section" aria-labelledby="motivation-title">
       <div class="container split">
         <figure class="portrait">
           <img data-field="portrait" src="images/Yueteng Yu-lowPixel.jpg" alt="Yueteng Yu portrait">
         </figure>
         <div>
           <p class="eyebrow">Motivation</p>
-          <h2 id="motivation-title">Making automated driving safer and more enjoyable for more people.</h2>
+          <h2 id="motivation-title">Making automated driving safer and more enjoyable.</h2>
           <div class="bio-list" data-field="summary"></div>
           <h3>Research Focus</h3>
           <ul class="focus-list" data-field="focus-list"></ul>
@@ -990,18 +1052,10 @@
       </div>
     </section>
 
-    <section id="research" class="section" aria-labelledby="research-title">
-      <div class="container">
-        <p class="eyebrow">Research Outcomes</p>
-        <h2 id="research-title">Publications and research outputs.</h2>
-        <div class="card-grid" data-field="publications"></div>
-      </div>
-    </section>
-
     <section id="projects" class="section soft" aria-labelledby="projects-title">
       <div class="container">
-        <p class="eyebrow">Project Experience</p>
-        <h2 id="projects-title">User-centred automotive & software computing.</h2>
+        <p class="eyebrow">Recent Projects</p>
+        <h2 id="projects-title">Automotive, AI and software engineering.</h2>
         <div class="project-grid" data-field="projects"></div>
       </div>
     </section>
@@ -1010,10 +1064,10 @@
       <div class="container cv-layout">
         <div>
           <p class="eyebrow">CV</p>
-          <h2 id="cv-title">Research-oriented profile.</h2>
+          <h2 id="cv-title">Yueteng's profile.</h2>
           <div class="action-row">
-            <button type="button" data-action="print-cv">Save CV as PDF</button>
-            <a class="button secondary" data-field="cv-pdf" href="#" download>Download PDF</a>
+            <button type="button" data-action="print-cv" hidden>Save CV as PDF</button>
+            <a class="button secondary disabled" data-field="cv-pdf" href="#" aria-disabled="true" tabindex="-1">Download CV</a>
             <a class="button secondary" data-field="cv-print-page" href="#">Open One-page CV</a>
           </div>
           <h3>Experience</h3>
@@ -1033,23 +1087,23 @@
     <section id="awards" class="section soft" aria-labelledby="awards-title">
       <div class="container">
         <p class="eyebrow">Awards</p>
-        <h2 id="awards-title">Selected scholarships, awards and outcomes.</h2>
+        <h2 id="awards-title">List of awards.</h2>
         <div class="award-list" data-field="awards"></div>
       </div>
     </section>
 
     <section id="recent" class="section" aria-labelledby="recent-title">
       <div class="container">
-        <p class="eyebrow">Recent Activities</p>
-        <h2 id="recent-title">Updates to add as the work moves.</h2>
+        <p class="eyebrow">Activities</p>
+        <h2 id="recent-title">Recent activities.</h2>
         <div class="activity-list" data-field="recent"></div>
       </div>
     </section>
 
     <section id="photos" class="section soft" aria-labelledby="photos-title">
       <div class="container">
-        <p class="eyebrow">Photo Wall</p>
-        <h2 id="photos-title">Selected automotive research moments.</h2>
+        <p class="eyebrow">Photo wall</p>
+        <h2 id="photos-title">Life on "Cars".</h2>
         <div class="photo-grid" data-field="photos"></div>
       </div>
     </section>
@@ -1157,8 +1211,19 @@
       }).join("");
       byField("summary").innerHTML = data.profile.summary.map((paragraph) => `<p>${safeHtml(paragraph)}</p>`).join("");
       byField("focus-list").innerHTML = data.researchFocus.map((item) => `<li>${esc(item)}</li>`).join("");
-      byField("cv-pdf").href = data.meta.cvPdf;
+      const cvPdf = byField("cv-pdf");
+      cvPdf.removeAttribute("download");
+      cvPdf.setAttribute("aria-disabled", "true");
+      cvPdf.setAttribute("tabindex", "-1");
       byField("cv-print-page").href = data.meta.cvPrintPage;
+      setSectionVisibility("projects", data.meta.showProjects !== false);
+    }
+
+    function setSectionVisibility(sectionId, visible) {
+      const section = document.getElementById(sectionId);
+      const navItem = document.querySelector(`[data-nav-item="${sectionId}"]`);
+      if (section) section.hidden = !visible;
+      if (navItem) navItem.hidden = !visible;
     }
 
     function renderHighlights(items) {
@@ -1244,9 +1309,7 @@
     function renderExperience(items) {
       byField("experience").innerHTML = items.map((item) => `
         <article class="timeline-item">
-          <div class="experience-logo">
-            ${item.logo ? `<img src="${esc(item.logo)}" alt="${esc(item.organisation)} logo">` : `<span>${esc(initials(item.organisation))}</span>`}
-          </div>
+          ${experienceLogo(item)}
           <div class="period">${esc(item.period)}</div>
           <div>
             <h3>${esc(item.role)}</h3>
@@ -1255,6 +1318,16 @@
           </div>
         </article>
       `).join("");
+    }
+
+    function experienceLogo(item) {
+      const content = item.logo
+        ? `<img src="${esc(item.logo)}" alt="${esc(item.organisation)} logo">`
+        : `<span>${esc(initials(item.organisation))}</span>`;
+      if (item.url) {
+        return `<a class="experience-logo" href="${esc(item.url)}" target="_blank" rel="noopener" aria-label="Open ${esc(item.organisation)}">${content}</a>`;
+      }
+      return `<div class="experience-logo">${content}</div>`;
     }
 
     function renderEducation(items) {
@@ -1344,7 +1417,8 @@
       }, { rootMargin: "-45% 0px -50% 0px" });
       sections.forEach((section) => observer.observe(section));
 
-      document.querySelector('[data-action="print-cv"]').addEventListener("click", () => window.print());
+      const printCv = document.querySelector('[data-action="print-cv"]');
+      if (printCv) printCv.addEventListener("click", () => window.print());
     }
 
     function bindPagination() {
@@ -1385,7 +1459,7 @@
         renderProfile(data);
         renderHighlights(data.highlights);
         renderPublications(data.publications);
-        renderProjects(data.projects);
+        if (data.meta.showProjects !== false) renderProjects(data.projects);
         renderExperience(data.experience);
         renderEducation(data.education);
         renderCompactList("skills", data.skills || []);

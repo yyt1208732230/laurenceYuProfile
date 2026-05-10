@@ -4,7 +4,8 @@
     "lastUpdated": "2026-05-02",
     "language": "en-AU",
     "cvPdf": "cv/Yueteng-Yu-CV.pdf",
-    "cvPrintPage": "cv.html"
+    "cvPrintPage": "cv.html",
+    "showProjects": false
   },
   "profile": {
     "name": "Yueteng (Laurence) Yu",
@@ -40,9 +41,9 @@
         "icon": "mail"
       },
       {
-        "label": "Google Scholar",
-        "url": "https://scholar.google.com/citations?user=lPzPwh0AAAAJ&hl=en",
-        "icon": "scholar"
+        "label": "QUT Profile",
+        "url": "https://research.qut.edu.au/carrsq/staff/yueteng-yu/",
+        "icon": "profile"
       },
       {
         "label": "LinkedIn",
@@ -55,9 +56,9 @@
         "icon": "github"
       },
       {
-        "label": "QUT Profile",
-        "url": "https://research.qut.edu.au/carrsq/staff/yueteng-yu/",
-        "icon": "profile"
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=lPzPwh0AAAAJ&hl=en",
+        "icon": "scholar"
       }
     ]
   },
@@ -185,12 +186,13 @@
   ],
   "projects": [
     {
-      "name": "Human-machine interface design to manage driver engagement in automated vehicles",
-      "category": "Doctoral research",
+      "name": "Improving the safety of self-driving vehicles in Australia",
+      "teaser": "images/projects/yueteng-briefing-self-driving car-3.webp",
+      "category": "Industry collaboration research",
       "period": "2024 - Present",
-      "description": "Doctoral research at QUT focused on HMI design for managing driver engagement in automated vehicles.",
-      "outcomes": ["Dynamic HMI", "Driver engagement", "Level 3+ automated driving"],
-      "source": "QUT CARRS-Q profile and LinkedIn profile PDF"
+      "description": "The project aims to design and evaluate novel human-machine interface systems to improve situation awareness and drivers’ abilities to take over control of AVs when necessary.",
+      "outcomes": ["Automated vehicles", "Safety", "Human computer interation"],
+      "source": "Australia's National Industry PhD Program (NIPP)"
     },
     {
       "name": "Vestibular cues for autonomous vehicle HMIs",
@@ -222,7 +224,7 @@
       "period": "2022 - 2023",
       "description": "Research project leadership for a multimodal dataset involving expert drivers and passengers, including system construction, software/hardware setup, experiment design, data processing, analysis and writing.",
       "outcomes": ["Multimodal dataset", "Drivers and passengers", "SOP", "Scientific Data target/output"],
-      "source": "Resume PDF and Google Scholar PDF"
+      "source": "Australia's National Industry PhD Program (NIPP)"
     },
     {
       "name": "Automotive HMI UX consultancy projects",
@@ -275,95 +277,108 @@
   ],
   "experience": [
     {
+      "role": "PhD Candidate",
+      "organisation": "AVR3 (formerly CARRS-Q), Queensland University of Technology (QUT)",
+      "logo": "images/cv/avr3.jpg",
+      "url": "https://avr3.org.au/",
+      "period": "Feb 2024 - Present",
+      "description": "Organises and designs test-track studies with a real autonomous vehicle, integrates multimodal systems for safety cue evaluation."
+    },
+    {
       "role": "Research Associate (PhD)",
-      "organisation": "QUT Design Academy",
+      "organisation": "BMW Group + QUT Design Academy",
+      "logo":"images/cv/bmwqut.jpg",
+      "url": "https://www.bmwgroupqutdesign.academy/",
       "period": "Mar 2024 - Present",
       "description": "Participates in interdisciplinary academic research activities on automotive UX and assists with Design Lab event coordination."
     },
     {
-      "role": "PhD Candidate",
-      "organisation": "AVR3 / CARRS-Q, Queensland University of Technology",
-      "period": "Feb 2024 - Present",
-      "description": "Organises and designs test-track studies with a real autonomous vehicle, integrates multimodal systems for safety cue evaluation, and serves as Web Co-chair of AutoUI 2025."
-    },
-    {
       "role": "HMI UX Researcher",
       "organisation": "CapsuleTech",
+      "logo":"images/cv/capsuletech_logo.jpg",
+      "url": "https://capsuletech.cn/home_en/",
       "period": "Oct 2023 - Jan 2024",
       "description": "Participated in BAIC off-road vehicle, Mercedes-Benz and Volvo HMI design consultancy projects as a user researcher."
     },
     {
       "role": "Human-Computer Interaction Researcher",
-      "organisation": "Tsinghua University",
+      "organisation": "Institute for AI Industry Research (AIR), Tsinghua University",
+      "logo":"images/cv/tsinghua.jpg",
+      "url": "https://air.tsinghua.edu.cn/en/",
       "period": "Oct 2022 - Oct 2023",
-      "description": "Worked with the HCI Research Group, Intelligent Transportation Lab, DISCOVER Lab and Institute of Intelligent Industry on L4 automated-vehicle road experiments, enterprise projects and national funding projects."
+      "description": "Worked with the HCI Research Group, Intelligent Transportation Lab, DISCOVER Lab and Institute of Intelligent Industry on L4 automated-vehicle open-road experiments, enterprise projects and national funding projects."
     },
     {
       "role": "Software Engineer Associate",
       "organisation": "PwC Shanghai Acceleration Center",
+      "logo":"images/cv/pwc_ac_shanghai_logo.jpg",
+      "url": "https://www.pwc.com/gx/en.html",
       "period": "Jul 2021",
       "description": "Received Tier 1 performance feedback, joined the Future Talent Program and worked on web-based and cloud-based B2B projects with a focus on Node.js."
     },
     {
       "role": "Junior Software Engineer Specialist",
       "organisation": "PwC Shanghai Acceleration Center",
+      "logo":"images/cv/pwc_ac_shanghai_logo.jpg",
+      "url": "https://www.pwc.com/gx/en.html",
       "period": "Jul 2020 - Jun 2021",
       "description": "Delivered Azure-based web applications and Power BI dashboards with Node.js, React.js and PostgreSQL; drove M&A requirement analysis and global teamwork; contributed to six compliance projects and more than ten deployments."
     },
     {
       "role": "Junior Software Engineer Intern",
       "organisation": "PwC Shanghai Acceleration Center",
+      "logo":"images/cv/pwc_ac_shanghai_logo.jpg",
+      "url": "https://www.pwc.com/gx/en.html",
       "period": "Jul 2019 - Jun 2020",
       "description": "Completed internship and received PwC Advisory Shanghai AC FY20 Internship Orientation Best Individual."
     },
     {
       "role": "Software Development Intern",
       "organisation": "Guangzhou Innovision Marketing Co., Ltd. (Shanghai Branch)",
+      "logo": "images/cv/innovision.avif",
       "period": "Jul 2017 - Sep 2017",
-      "description": "Worked on Java software development for revenue recognition and cost confirmation in a car advertising company context."
+      "description": "Worked on Java software development for revenue recognition and cost confirmation in a automotive manufaturing advertising context."
     }
   ],
   "education": [
     {
       "degree": "Doctor of Philosophy",
-      "institution": "Queensland University of Technology",
-      "period": "Feb 2024 - Feb 2028",
+      "institution": "Queensland University of Technology (QUT), Australia",
+      "period": "Feb 2024 - Present",
       "details": "Human-Machine Interface research for automated vehicles."
     },
     {
-      "degree": "MSc in Human-Computer Interaction",
-      "institution": "University of Nottingham",
+      "degree": "MSc in Human-Computer Interaction (HCI)",
+      "institution": "University of Nottingham, UK",
       "period": "Jul 2021 - Dec 2022",
-      "details": "Graduated with Distinction; GPA 4.0."
+      "details": "Graduated with Distinction."
     },
     {
       "degree": "Visiting Study",
-      "institution": "University of Canterbury",
+      "institution": "University of Canterbury, New Zealand",
       "period": "Jan 2019 - Feb 2019",
-      "details": "Cultural workshop and innovation training; ranked #1 in the visiting study cohort."
+      "details": "Cultural workshop and innovation training; Won championship in the visiting study cohort."
     },
     {
       "degree": "BEng in Software Engineering",
-      "institution": "Sanda University",
+      "institution": "Sanda University, China",
       "period": "Sep 2016 - Jul 2020",
-      "details": "GPA 3.81/4.0; ranked #1 in the software engineering course."
+      "details": "GPA 3.81/4.0; Ranked #1; Excellent Graduate."
     }
   ],
   "skills": [
+    "Quantitative and qualitative user studies",
     "Python",
     "JavaScript",
     "Node.js",
     "Vue.js",
     "React.js",
-    "Three.js",
     "SQL",
     "LaTeX",
     "Java",
     "C",
     "Linux",
     "SPSS Statistics",
-    "CARLA Simulator",
-    "Logitech G29",
     "E-Prime",
     "MATLAB",
     "Tobii Pro Lab",
@@ -374,13 +389,12 @@
     "Azure",
     "Power BI",
     "AR/VR",
-    "Machine learning",
-    "Quantitative and qualitative user studies"
+    "Machine learning"
   ],
   "certifications": [
-    "Human-Centered Design",
+    "Human-Centered Design (PwC)",
     "ISTQB-FL Certified Tester",
-    "Digital Acumen",
+    "Digital Acumen (PwC)",
     "National Computer Rank Examination (Java) Level II"
   ],
   "languages": [
@@ -488,29 +502,67 @@
   ],
   "recent": [
     {
+      "date": "2026",
+      "title": "Presenter in CHI'26",
+      "location": "Spain, Barcelona",
+      "description": "Presenter of a awarded conference publication in the biggest Human-computer interaction (HCI) international academic conference at present."
+    },
+    {
       "date": "2025",
       "title": "Web Co-chair of AutoUI 2025",
-      "location": "AutomotiveUI 2025",
-      "description": "Served as Web Co-chair while continuing doctoral research in automated driving HMI."
+      "location": "Australia, Brisbane",
+      "description": "Served as Web Co-chair for the bigest international academic conference of automotive UI -- 17th ACM Conference on Automotive User Interfaces and Interactive Vehicular Applications (Auto-UI)."
     },
     {
       "date": "2025",
-      "title": "AutomotiveUI 2025 research outputs",
-      "location": "Brisbane, Australia",
-      "description": "Multiple AutomotiveUI 2025 outputs connected with vestibular cues, LLM conversational agents, deictic interaction, gaze patterns and passenger comfort/perceived safety."
+      "title": "Passengers’ Comfort and Perceived Safety Workshop",
+      "location": "Australia, Brisbane",
+      "description": "Co-organised workshop at AutoUI25"
     },
     {
-      "date": "2026",
-      "title": "Recent activities will be updated manually",
-      "location": "Editable in content.json",
-      "description": "Use this section for talks, submissions, demos, field studies, media, visits and awards as they happen."
+      "date": "2025",
+      "title": "Aus/NZ Design Network Design Network (ANDEN)",
+      "location": "Australia, Brisbane (online)",
+      "description": "Discussion and networking within the Ocean design network."
+    },
+    {
+      "date": "2025",
+      "title": "Leadership Styles, Negotiation, and Conflict Management Training Workshop",
+      "location": "Australia, Melbourne, University of Melbourne",
+      "description": "Professional training under Australia's National Industry PhD Program (NIPP)."
+    },
+    {
+      "date": "2025",
+      "title": "Demo Day of Department of Transport and Main Roads (TMR)",
+      "location": "Australia, Brisbane, RACQ",
+      "description": "Presenter of my dotoral research outcomes."
+    },
+    {
+      "date": "2024",
+      "title": "45th Australasian Transport Research Forum (ATRF)",
+      "location": "Australia, Melbourne, Monash University",
+      "description": "Participate in research forum of transportation and networking."
+    },
+    {
+      "date": "2024",
+      "title": "IEEE Academia-Industry Summer School (AISS)",
+      "location": "Australia, Melbourne, Swinburne University of Technology",
+      "description": "Participate in summer school and networking."
+    },
+    {
+      "date": "2024",
+      "title": "Collaborative Research Relationships Workshop",
+      "location": "Australia, Sydney, Macquarie University",
+      "description": "Professional training under Australia's National Industry PhD Program (NIPP)."
+    },
+    {
+      "date": "2024",
+      "title": "Aus/NZ Design Network Design Network (ANDEN)",
+      "location": "Australia, Melbourne, University of Melbourne (online)",
+      "description": "Discussion and networking within the Ocean design network."
     }
   ],
   "photoWall": [
-    {
-      "src": "images/bike.jpg",
-      "caption": "My Bike"
-    },
     {
       "src": "images/photoWall/URinCompany.jpg",
       "caption": "User Research in HMI Company"
@@ -522,6 +574,10 @@
     {
       "src": "images/photoWall/UoN.png",
       "caption": "The Lab at UoN studying Master"
+    },
+    {
+      "src": "images/bike.jpg",
+      "caption": "My Bike"
     }
   ],
   "sources": [
