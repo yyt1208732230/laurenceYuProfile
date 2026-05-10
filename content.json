@@ -564,20 +564,52 @@
   ],
   "photoWall": [
     {
-      "src": "images/photoWall/URinCompany.jpg",
-      "caption": "User Research in HMI Company"
+      "src": "images/photoWall/20250526_094821.jpg",
+      "caption": "My Supervisor and Me"
     },
     {
       "src": "images/photoWall/Academy Team Photo.jpg",
       "caption": "BMW Academy Team"
     },
     {
+      "src": "images/photoWall/URinCompany.jpg",
+      "caption": "User Research in HMI Company"
+    },
+    {
+      "src": "images/photoWall/20240906124055.webp",
+      "caption": "Led On-road Driving Proj"
+    },
+    {
       "src": "images/photoWall/UoN.png",
-      "caption": "The Lab at UoN studying Master"
+      "caption": "Master Activities"
+    },
+    {
+      "src": "images/photoWall/20240906125720.webp",
+      "caption": "Many AV Rides"
+    },
+    {
+      "src": "images/photoWall/DSCF5535.webp",
+      "caption": "Study at UoN HF Lab"
+    },
+    {
+      "src": "images/photoWall/image001.webp",
+      "caption": "Keep Pushing!"
+    },
+    {
+      "src": "images/photoWall/Woz.webp",
+      "caption": "My first driving study"
+    },
+    {
+      "src": "images/photoWall/20240906125706.webp",
+      "caption": "Be a Member"
+    },
+    {
+      "src": "images/photoWall/20240906124115.webp",
+      "caption": "AV Shuttle at QUT"
     },
     {
       "src": "images/bike.jpg",
-      "caption": "My Bike"
+      "caption": "I am not always `Driving`!"
     }
   ],
   "sources": [

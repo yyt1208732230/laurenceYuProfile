@@ -778,16 +778,18 @@
     .photo-grid {
       position: relative;
       overflow: hidden;
-      max-width: 980px;
+      max-width: 1040px;
       background: transparent;
       border: 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
     }
 
     .photo-track {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: minmax(0, 360px);
-      grid-template-rows: repeat(2, minmax(0, 1fr));
+      grid-auto-columns: clamp(190px, 22vw, 300px);
+      grid-template-rows: repeat(2, auto);
       gap: 14px;
       transition: transform 560ms ease;
       will-change: transform;
@@ -796,10 +798,16 @@
     .photo-tile {
       position: relative;
       min-height: 0;
-      aspect-ratio: 16 / 10;
+      height: clamp(130px, 15vw, 210px);
+      aspect-ratio: auto;
       background: var(--surface-card);
       overflow: hidden;
       border: 1px solid var(--hairline);
+    }
+
+    .photo-tile:nth-child(4n + 2),
+    .photo-tile:nth-child(4n + 3) {
+      height: clamp(150px, 17vw, 238px);
     }
 
     .photo-tile img {
@@ -881,7 +889,8 @@
 
       .project-grid,
       .photo-track {
-        grid-auto-columns: minmax(0, calc((100% - 14px) / 2));
+        grid-auto-columns: clamp(180px, 38vw, 260px);
+        gap: 12px;
       }
     }
 
@@ -939,8 +948,15 @@
       }
 
       .photo-track {
-        grid-auto-columns: 100%;
-        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-auto-columns: minmax(160px, 72vw);
+        grid-template-rows: repeat(2, auto);
+        gap: 12px;
+      }
+
+      .photo-tile,
+      .photo-tile:nth-child(4n + 2),
+      .photo-tile:nth-child(4n + 3) {
+        height: clamp(128px, 42vw, 210px);
       }
 
       .fact { border-right: 0; border-bottom: 1px solid var(--hairline); }
@@ -1444,9 +1460,15 @@
       const slides = [...track.children];
       if (slides.length <= 4) return;
       let index = 0;
+      const reset = () => {
+        index = 0;
+        track.style.transform = "translateX(0)";
+      };
+      window.addEventListener("resize", reset);
       window.setInterval(() => {
-        const visibleColumns = window.matchMedia("(max-width: 760px)").matches ? 1 : 2;
-        const maxColumn = Math.max(0, Math.ceil(slides.length / 2) - visibleColumns);
+        const gridColumnsVisible = Math.max(1, Math.floor(track.parentElement.clientWidth / slides[0].getBoundingClientRect().width));
+        const totalColumns = Math.ceil(slides.length / 2);
+        const maxColumn = Math.max(0, totalColumns - gridColumnsVisible);
         index = index >= maxColumn ? 0 : index + 1;
         const targetSlide = slides[index * 2] || slides[0];
         const offset = targetSlide.offsetLeft;
