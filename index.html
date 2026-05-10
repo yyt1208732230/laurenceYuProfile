@@ -1017,9 +1017,19 @@
       .hero-copy { padding: 0; }
 
       .hero-media {
-        justify-self: end;
-        width: min(34vw, 118px);
-        min-width: 88px;
+        justify-self: center;
+        width: min(42vw, 132px);
+        min-width: 96px;
+        z-index: 3;
+        transform: rotate(-4deg);
+        margin-bottom: -18px;
+        box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+        border-color: rgba(255,255,255,0.34);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
       }
 
       .quick-nav {
