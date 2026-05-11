@@ -405,100 +405,135 @@
   ],
   "awards": [
     {
+      "name": "National Industry PhD Program Scholarship",
+      "year": "2024",
+      "source": "National-level",
+      "organisation": "Australian Department of Education"
+    },
+    {
       "name": "Chair for Empathic Machines Postgraduate Research Scholarship",
       "year": "2024",
-      "organisation": "QUT / Chair for Empathic Machines",
-      "source": "QUT CARRS-Q public profile"
+      "source": "University-level",
+      "organisation": "QUT"
     },
     {
       "name": "Excellent Graduate of Shanghai",
       "year": "Jun 2020",
-      "organisation": "Shanghai, China",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "Province-/state-level",
+      "organisation": "Shanghai, China"
     },
     {
       "name": "China Telecom Scholarship",
       "year": "Apr 2020",
-      "organisation": "China",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "National-level"
     },
     {
       "name": "National Scholarship",
       "year": "Dec 2019",
       "organisation": "China",
-      "source": "Resume PDF and LinkedIn profile PDF"
+      "source": "National-level"
     },
     {
       "name": "Special Prize for Comprehensive Scholarship",
       "year": "Nov 2019",
       "organisation": "Sanda University",
-      "source": "Resume PDF"
+      "source": "University-level"
     },
     {
       "name": "Software Copyright No. 4434202 for NDLS System V1.0",
       "year": "Oct 2019",
       "organisation": "China",
-      "source": "Resume PDF"
+      "source": "National-level"
     },
     {
       "name": "Second Prize, China Undergraduate Mathematical Contest in Modelling",
       "year": "Dec 2019",
       "organisation": "Shanghai, China",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "Province-/state-level"
+    },
+    {
+      "name": "PwC Advisory Shanghai AC FY20 Internship Orientation Best Individual",
+      "year": "July 2019",
+      "organisation": "Shanghai, China",
+      "source": "Event/company-level"
     },
     {
       "name": "Champion, Urban Innovation Competition",
       "year": "Feb 2019",
       "organisation": "University of Canterbury",
-      "source": "Resume PDF"
+      "source": "Event-level"
     },
     {
       "name": "Third Prize, Network Technology Challenge",
       "year": "Apr 2019",
       "organisation": "East China, China",
-      "source": "Resume PDF"
+      "source": "National-level"
     },
     {
       "name": "Third Prize, Blue Bridge Cup National Software and Information Technology Professionals Competition, Java Group",
       "year": "Mar 2019",
       "organisation": "Shanghai, China",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "Province-/state-level"
     },
     {
-      "name": "First Prize for Comprehensive Scholarship",
+      "name": "First Prize for Comprehensive Scholarship × 2",
       "year": "Sep 2018 and Oct 2017",
       "organisation": "Sanda University",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "University-level"
     },
     {
       "name": "Excellent Student Leader",
       "year": "Sep 2018",
       "organisation": "Sanda University",
-      "source": "Resume PDF"
+      "source": "University-level"
     },
     {
       "name": "Second Prize, Blue Bridge Cup National Software and Information Technology Professionals Competition, Java Group",
       "year": "Apr 2018",
       "organisation": "Shanghai, China",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "Province-/state-level"
     },
     {
       "name": "Third Prize, China Undergraduate Mathematical Contest in Modelling",
       "year": "Dec 2017",
       "organisation": "Shanghai, China",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "Province-/state-level"
     },
     {
       "name": "Person of Year of Campus",
       "year": "Nov 2017",
       "organisation": "Sanda University",
-      "source": "LinkedIn awards screenshot"
+      "source": "University-level"
     },
     {
-      "name": "Top 10, Sanda University Public Speaking Platform Speech Competition",
+      "name": "Top 10 award of Speech Competition in Public Speaking Platform",
       "year": "2017",
       "organisation": "Sanda University",
-      "source": "Resume PDF and LinkedIn awards screenshot"
+      "source": "University-level"
+    },
+    {
+      "name": "Memorial award of Shanghai university student simulation job competition",
+      "year": "2017",
+      "organisation": "Shanghai Student Affairs Center, Sanda University",
+      "source": "University-level"
+    },
+    {
+      "name": "Second Prize of Career planning competition of 'Shanda Zhi Chun'",
+      "year": "2017",
+      "organisation": "Sanda University",
+      "source": "University-level"
+    },
+    {
+      "name": "Champion, Men’s 4×100 m Relay, 7th University Sports Games",
+      "year": "May, 2017",
+      "organisation": "Sanda University",
+      "source": "University-level"
+    },
+    {
+      "name": "Champion, Men’s 50 m Sprint (New Record Holder), 7th University Sports Games",
+      "year": "May, 2017",
+      "organisation": "Sanda University",
+      "source": "University-level"
     }
   ],
   "recent": [
