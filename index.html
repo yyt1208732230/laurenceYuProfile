@@ -1321,6 +1321,7 @@
     }
 
     const tagList = (tags = []) => tags.map((tag) => `<span class="tag">${esc(tag)}</span>`).join("");
+    const itemLabel = (item) => typeof item === "string" ? item : (item.name || item.label || item.title || "");
 
     function teaserMarkup(item, kind, label) {
       const src = item.teaser || item.logo || "";
@@ -1506,7 +1507,7 @@
     function renderCompactList(fieldName, items) {
       const node = byField(fieldName);
       if (!node) return;
-      node.innerHTML = items.map((item) => `<span class="tag">${esc(item)}</span>`).join("");
+      node.innerHTML = items.map((item) => `<span class="tag">${esc(itemLabel(item))}</span>`).join("");
     }
 
     function renderAwards(items) {
