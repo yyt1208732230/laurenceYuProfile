@@ -67,6 +67,38 @@
 
     a { color: var(--ink); text-decoration: none; }
 
+    a,
+    .rich-text a {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(28,105,212,0.35);
+    }
+
+    .rich-text a:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    .rich-text strong,
+    .rich-text b {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .rich-text u {
+      text-decoration: underline;
+      text-decoration-color: var(--primary);
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2px;
+    }
+
+    .rich-text code {
+      padding: 1px 4px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      color: var(--ink);
+      font-size: 0.92em;
+    }
+
     button {
       min-height: 44px;
       border: 0;
@@ -206,13 +238,44 @@
     const showInCV = (entry) => !entry || typeof entry !== "object" || entry.showInCV !== false;
     const itemLabel = (entry) => typeof entry === "string" ? entry : (entry.name || entry.label || entry.title || "");
 
+    function safeHtml(value = "") {
+      const template = document.createElement("template");
+      template.innerHTML = String(value);
+      const allowed = new Set(["A", "BR", "EM", "I", "STRONG", "B", "U", "SMALL", "SUP", "SUB", "CODE", "SPAN"]);
+      const walker = document.createTreeWalker(template.content, NodeFilter.SHOW_ELEMENT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach((node) => {
+        if (!allowed.has(node.tagName)) {
+          node.replaceWith(...node.childNodes);
+          return;
+        }
+        [...node.attributes].forEach((attr) => {
+          const name = attr.name.toLowerCase();
+          if (name.startsWith("on") || name === "style") node.removeAttribute(attr.name);
+          if (node.tagName !== "A" && name !== "class") node.removeAttribute(attr.name);
+        });
+        if (node.tagName === "A") {
+          [...node.attributes].forEach((attr) => {
+            if (!["href", "title", "target", "rel", "class"].includes(attr.name.toLowerCase())) {
+              node.removeAttribute(attr.name);
+            }
+          });
+          const href = node.getAttribute("href") || "";
+          if (/^\s*javascript:/i.test(href)) node.removeAttribute("href");
+          if (node.getAttribute("target") === "_blank") node.setAttribute("rel", "noopener");
+        }
+      });
+      return template.innerHTML;
+    }
+
     const item = (period, title, subtitle, description) => `
       <article class="item">
         <div class="period">${esc(period)}</div>
-        <div>
+        <div class="rich-text">
           <h3>${esc(title)}</h3>
           <p><strong>${esc(subtitle)}</strong></p>
-          ${description ? `<p>${esc(description)}</p>` : ""}
+          ${description ? `<p>${safeHtml(description)}</p>` : ""}
         </div>
       </article>
     `;
@@ -222,8 +285,10 @@
       .then((data) => {
         field("name").textContent = data.profile.name;
         field("title").textContent = data.profile.title;
-        field("statement").textContent = data.profile.statement;
-        field("summary").textContent = data.profile.summary[0];
+        field("statement").innerHTML = safeHtml(data.profile.statement);
+        field("statement").classList.add("rich-text");
+        field("summary").innerHTML = safeHtml(data.profile.summary[0]);
+        field("summary").classList.add("rich-text");
         field("contact").innerHTML = data.profile.links.slice(0, 4).map((link) => `<a href="${esc(link.url)}">${esc(link.label)}</a>`).join("");
         field("experience").innerHTML = data.experience.filter(showInCV).map((entry) => item(entry.period, entry.role, entry.organisation, entry.description)).join("");
         field("education").innerHTML = data.education.filter(showInCV).map((entry) => item(entry.period, entry.degree, entry.institution, entry.details)).join("");

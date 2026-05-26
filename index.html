@@ -368,6 +368,67 @@
       font-size: 18px;
     }
 
+    .bio-list a,
+    [data-field="hero-statement"] a,
+    .timeline a,
+    .card p a,
+    .project-card p a,
+    .activity p a {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(28,105,212,0.36);
+    }
+
+    .bio-list a:hover,
+    [data-field="hero-statement"] a:hover,
+    .timeline a:hover,
+    .card p a:hover,
+    .project-card p a:hover,
+    .activity p a:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    .bio-list strong,
+    .bio-list b,
+    [data-field="hero-statement"] strong,
+    [data-field="hero-statement"] b,
+    .timeline strong,
+    .timeline b,
+    .card p strong,
+    .card p b,
+    .project-card p strong,
+    .project-card p b,
+    .activity p strong,
+    .activity p b {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .bio-list u,
+    [data-field="hero-statement"] u,
+    .timeline u,
+    .card p u,
+    .project-card p u,
+    .activity p u {
+      text-decoration: underline;
+      text-decoration-color: var(--primary);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    .bio-list code,
+    [data-field="hero-statement"] code,
+    .timeline code,
+    .card p code,
+    .project-card p code,
+    .activity p code {
+      padding: 2px 5px;
+      background: var(--surface-soft);
+      color: var(--ink);
+      border: 1px solid var(--hairline);
+      font-size: 0.92em;
+    }
+
     .focus-list {
       display: grid;
       gap: 0;
@@ -1292,7 +1353,7 @@
     function safeHtml(value = "") {
       const template = document.createElement("template");
       template.innerHTML = String(value);
-      const allowed = new Set(["A", "BR", "EM", "I", "STRONG", "B", "SMALL", "SUP", "SUB", "CODE", "SPAN"]);
+      const allowed = new Set(["A", "BR", "EM", "I", "STRONG", "B", "U", "SMALL", "SUP", "SUB", "CODE", "SPAN"]);
       const walker = document.createTreeWalker(template.content, NodeFilter.SHOW_ELEMENT);
       const nodes = [];
       while (walker.nextNode()) nodes.push(walker.currentNode);
