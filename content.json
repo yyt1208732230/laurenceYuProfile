@@ -18,10 +18,10 @@
                     "heroVideo":  "images/life-on-car-fix.mp4",
                     "statement":  "I am motivated by a simple question: How can we design safer and user-centred automated driving interactions that benefit a broader population?",
                     "summary":  [
-                                    "I am a PhD candidate at \u003ca href='https://avr3.org.au/' target='_blank'\u003eFuture Mobility Centre, Queensland University of Technology (QUT)\u003c/a\u003e, researching advanced human-machine interfaces (HMIs) for automated vehicles.",
+                                    "I am a PhD candidate at \u003ca href=\u0027https://avr3.org.au/\u0027 target=\u0027_blank\u0027\u003eFuture Mobility Centre, Queensland University of Technology (QUT)\u003c/a\u003e, researching advanced human-machine interfaces (HMIs) for automated vehicles.",
                                     "My work focuses on multimodal HMI, bringing safety and better user experience in high levels of automated driving.",
                                     "I have designed and organised studies across driving simulators, test tracks, open-road urban experiments and autonomous-vehicle data collection, with practical experience in multimodal sensing including DMS, IMU, ECG/EDA, EEG, eye tracking, physiological data, video and subjective measures.",
-                                    "Before QUT, I worked across \u003ca href='https://air.tsinghua.edu.cn/en/' target='_blank'\u003eTsinghua University\u003c/a\u003e's HCI and intelligent transportation research environment, automotive HMI UX projects, and software engineering roles at \u003ca href='https://www.pwc.com/gx/en.html' target='_blank'\u003ePwC\u003c/a\u003e."
+                                    "Before QUT, I worked across \u003ca href=\u0027https://air.tsinghua.edu.cn/en/\u0027 target=\u0027_blank\u0027\u003eTsinghua University\u003c/a\u003e\u0027s HCI and intelligent transportation research environment, automotive HMI UX projects, and software engineering roles at \u003ca href=\u0027https://www.pwc.com/gx/en.html\u0027 target=\u0027_blank\u0027\u003ePwC\u003c/a\u003e."
                                 ],
                     "currentRoles":  [
                                          {
@@ -58,7 +58,7 @@
                                   },
                                   {
                                       "label":  "Google Scholar",
-                                      "url":  "https://scholar.google.com/citations?user=lPzPwh0AAAAJ&hl=en",
+                                      "url":  "https://scholar.google.com/citations?user=lPzPwh0AAAAJ\u0026hl=en",
                                       "icon":  "scholar"
                                   }
                               ]
@@ -160,7 +160,7 @@
                              "showInCV":  true
                          },
                          {
-                             "title":  "Measuring Passengers' Comfort and Perceived Safety in Automated Driving: Good Practices, Challenges, and Opportunities",
+                             "title":  "Measuring Passengers\u0027 Comfort and Perceived Safety in Automated Driving: Good Practices, Challenges, and Opportunities",
                              "authors":  "Chen Peng, Pavlo Bazilinskyy, Yueteng Yu and Natasha Merat",
                              "teaser":  "images/research/aui25-passenger.jpg",
                              "venue":  "AutomotiveUI 2025 Adjunct Proceedings",
@@ -244,7 +244,7 @@
                                           "Safety",
                                           "Human computer interation"
                                       ],
-                         "source":  "Australia's National Industry PhD Program (NIPP)"
+                         "source":  "Australia\u0027s National Industry PhD Program (NIPP)"
                      },
                      {
                          "name":  "Vestibular cues for autonomous vehicle HMIs",
@@ -296,7 +296,7 @@
                                           "SOP",
                                           "Scientific Data target/output"
                                       ],
-                         "source":  "Australia's National Industry PhD Program (NIPP)"
+                         "source":  "Australia\u0027s National Industry PhD Program (NIPP)"
                      },
                      {
                          "name":  "Automotive HMI UX consultancy projects",
@@ -410,12 +410,12 @@
                            "showInCV":  true
                        },
                        {
-                           "role":  "Human-Computer Interaction Researcher",
+                           "role":  "Research Assistant / Project Researcher",
                            "organisation":  "Institute for AI Industry Research (AIR), Tsinghua University",
                            "logo":  "images/cv/tsinghua.jpg",
                            "url":  "https://air.tsinghua.edu.cn/en/",
                            "period":  "Oct 2022 - Oct 2023",
-                           "description":  "Worked with the HCI Research Group, Intelligent Transportation Lab, DISCOVER Lab and Institute of Intelligent Industry on L4 automated-vehicle open-road experiments, enterprise projects and national funding projects.",
+                           "description":  "\u003csection class=\"experience-item\"\u003e\n  Contributed to enterprise-funded and nationally funded research projects in automated driving, with responsibilities spanning experimental design, participant recruitment, real-world study coordination, data collection, and multimodal data analysis. Supported and conducted complex open-road experiments using a real Level 4 automated vehicle in urban driving contexts.\n  \u003c/p\u003e\n\n  \u003cul\u003e\n    \u003cli\u003e\n      \u003cstrong\u003eLead Researcher\u003c/strong\u003e - Research on Multi-Modal Open-Road Driving Behaviour in Urban Contexts\n      \u003cbr\u003e\n      \u003cem\u003eCooperative project with Baidu Inc.\u003c/em\u003e\n    \u003c/li\u003e\n\n    \u003cli\u003e\n      \u003cstrong\u003eProject Contributor\u003c/strong\u003e - Framework for Macro-Level Traffic Assessment\n      \u003cbr\u003e\n      \u003cem\u003eEnterprise-funded research project\u003c/em\u003e\n    \u003c/li\u003e\n\n    \u003cli\u003e\n      \u003cstrong\u003eGrant Application Contributor\u003c/strong\u003e - Modelling and Evaluating Drivers and Passengers Using Multimodal Data\n      \u003cbr\u003e\n      \u003cem\u003eContributed to two grant applications related to multimodal driver/passenger modelling and evaluation, including projects at funding scales of ￥500,000 and approx. ￥1.2 million within a ￥200 million national key research programme.\u003c/em\u003e\n    \u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/section\u003e",
                            "showInCV":  true
                        },
                        {
@@ -433,7 +433,7 @@
                            "logo":  "images/cv/pwc_ac_shanghai_logo.jpg",
                            "url":  "https://www.pwc.com/gx/en.html",
                            "period":  "Jul 2020 - Jun 2021",
-                           "description":  "Delivered Azure-based web applications and Power BI dashboards with Node.js, React.js and PostgreSQL; drove M&A requirement analysis and global teamwork; contributed to six compliance projects and more than ten deployments.",
+                           "description":  "Delivered Azure-based web applications and Power BI dashboards with Node.js, React.js and PostgreSQL; drove M\u0026A requirement analysis and global teamwork; contributed to six compliance projects and more than ten deployments.",
                            "showInCV":  true
                        },
                        {
@@ -735,21 +735,21 @@
                        "showInCV":  false
                    },
                    {
-                       "name":  "Second Prize of Career planning competition of 'Shanda Zhi Chun'",
+                       "name":  "Second Prize of Career planning competition of \u0027Shanda Zhi Chun\u0027",
                        "year":  "2017",
                        "organisation":  "Sanda University",
                        "source":  "University-level",
                        "showInCV":  false
                    },
                    {
-                       "name":  "Champion, Men's 4×100 m Relay, 7th University Sports Games",
+                       "name":  "Champion, Men\u0027s 4×100 m Relay, 7th University Sports Games",
                        "year":  "May, 2017",
                        "organisation":  "Sanda University",
                        "source":  "University-level",
                        "showInCV":  false
                    },
                    {
-                       "name":  "Champion, Men's 50 m Sprint (New Record Holder), 7th University Sports Games",
+                       "name":  "Champion, Men\u0027s 50 m Sprint (New Record Holder), 7th University Sports Games",
                        "year":  "May, 2017",
                        "organisation":  "Sanda University",
                        "source":  "University-level",
@@ -759,7 +759,7 @@
     "recent":  [
                    {
                        "date":  "2026",
-                       "title":  "Presenter in CHI'26",
+                       "title":  "Presenter in CHI\u002726",
                        "location":  "Spain, Barcelona",
                        "description":  "Presenter of a awarded conference publication in the biggest Human-computer interaction (HCI) international academic conference at present."
                    },
@@ -771,7 +771,7 @@
                    },
                    {
                        "date":  "2025",
-                       "title":  "Passengers's Comfort and Perceived Safety Workshop",
+                       "title":  "Passengers\u0027s Comfort and Perceived Safety Workshop",
                        "location":  "Australia, Brisbane",
                        "description":  "Co-organised workshop at AutoUI25"
                    },
@@ -785,7 +785,7 @@
                        "date":  "2025",
                        "title":  "Leadership Styles, Negotiation, and Conflict Management Training Workshop",
                        "location":  "Australia, Melbourne, University of Melbourne",
-                       "description":  "Professional training under Australia's National Industry PhD Program (NIPP)."
+                       "description":  "Professional training under Australia\u0027s National Industry PhD Program (NIPP)."
                    },
                    {
                        "date":  "2025",
@@ -809,7 +809,7 @@
                        "date":  "2024",
                        "title":  "Collaborative Research Relationships Workshop",
                        "location":  "Australia, Sydney, Macquarie University",
-                       "description":  "Professional training under Australia's National Industry PhD Program (NIPP)."
+                       "description":  "Professional training under Australia\u0027s National Industry PhD Program (NIPP)."
                    },
                    {
                        "date":  "2024",
@@ -875,7 +875,7 @@
     "sources":  [
                     {
                         "label":  "Local Google Scholar PDF extract",
-                        "url":  "https://scholar.google.com/citations?user=lPzPwh0AAAAJ&hl=en"
+                        "url":  "https://scholar.google.com/citations?user=lPzPwh0AAAAJ\u0026hl=en"
                     },
                     {
                         "label":  "Local LinkedIn profile PDF extracts",
